@@ -1,10 +1,10 @@
-" BlueDrake Color Scheme
+" Bluedrake Color Scheme
 "
 " Designer: Michael Malick
 " Updated:  20 Jun 2014 
 " Version:  0.06
 "
-" BlueDrake is a dark color scheme with lots of blue. The palette for this
+" Bluedrake is a dark color scheme with lots of blue. The palette for this
 " scheme was selected using consistent luminance and chroma values (i.e., only
 " the hue value was changed) making each color equally visible. 
 "
@@ -62,19 +62,19 @@ if has("gui_running")
     let s:grey       = "999999"
     let s:white      = "ffffff"
 
-" Sets the highlighting for the given group
-fun! <SID>X(group, fg, bg, attr)
-    if a:fg != ""
-        exec "hi " . a:group . " guifg=#" . a:fg 
-    endif
-    if a:bg != ""
-        exec "hi " . a:group . " guibg=#" . a:bg
-    endif
-    if a:attr != ""
-        exec "hi " . a:group . " gui=" . a:attr 
-    endif
-endfun
+    function! <SID>X(group, fg, bg, attr)
+        if a:fg != ""
+            exec "hi " . a:group . " guifg=#" . a:fg 
+        endif
+        if a:bg != ""
+            exec "hi " . a:group . " guibg=#" . a:bg
+        endif
+        if a:attr != ""
+            exec "hi " . a:group . " gui=" . a:attr 
+        endif
+    endfunction
 endif
+
 
 if !has("gui_running")
     " Blue palette
@@ -98,8 +98,7 @@ if !has("gui_running")
     let s:spell      = 124
     let s:white      = 15
 
-    " Sets the highlighting for the given group
-    fun! <SID>X(group, fg, bg, attr)
+    function! <SID>X(group, fg, bg, attr)
         if a:fg != ""
             exec "hi " . a:group .  " ctermfg=" . a:fg
         endif
@@ -109,12 +108,11 @@ if !has("gui_running")
         if a:attr != ""
             exec "hi " . a:group . " cterm=" . a:attr
         endif
-    endfun
+    endfunction
 endif
 
 
-
-" Vim Highlighting
+" Vim highlighting
 call <SID>X("Normal", s:foreground, s:background, "")
 call <SID>X("Cursor", s:background, s:foreground, "")
 call <SID>X("CursorLineNr", s:selection, "", "")
@@ -143,13 +141,14 @@ if version >= 700
     call <SID>X("PMenu", s:background, s:foreground, "none")
     call <SID>X("PMenuSel", s:background, s:comment, "")
     call <SID>X("SignColumn", "", s:background, "none")
-end
+endif
 if version >= 703
     call <SID>X("ColorColumn", "", s:column, "none")
     call <SID>X("Conceal", s:foreground, s:background, "")
-end
+endif
 
-" Standard Highlighting
+
+" Standard highlighting
 call <SID>X("Todo", s:purple, s:background, "none")
 call <SID>X("Title", s:cyan, "", "")
 call <SID>X("Identifier", s:orange, "", "none")
@@ -167,6 +166,7 @@ call <SID>X("Define", s:purple, "", "none")
 call <SID>X("Include", s:cyan, "", "")
 
 
+" Terminal and GUI differences (no italics in mac terminal)
 if has("gui_running")
     call <SID>X("String", s:green, "", "italic")
     call <SID>X("Comment", s:comment, "", "italic")
@@ -177,6 +177,7 @@ else
     call <SID>X("SpellBad", s:spell, s:background, "")
     call <SID>X("CursorLine", "", "", "underline")
 endif
+
 
 " Pandoc
 call <SID>X("pandocUListItem", s:grey, "", "")
