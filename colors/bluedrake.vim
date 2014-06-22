@@ -62,8 +62,8 @@ if has("gui_running")
     endif
 
     if &background=="light"
-        let s:baseback0  = s:base30
-        let s:baseback1  = s:base31
+        let s:baseback0  = s:base31
+        let s:baseback1  = s:base30
         let s:basecolor1 = s:base10
         let s:basecolor0 = s:base21
         let s:basecolor2 = s:base20
@@ -147,8 +147,8 @@ if !has("gui_running")
     endif
 
     if &background=="light"
-        let s:baseback0  = s:base30
-        let s:baseback1  = s:base31
+        let s:baseback0  = s:base31
+        let s:baseback1  = s:base30
         let s:basecolor1 = s:base10
         let s:basecolor0 = s:base21
         let s:basecolor2 = s:base20
