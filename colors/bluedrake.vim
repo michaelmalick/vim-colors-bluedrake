@@ -80,10 +80,11 @@ if !has("gui_running")
     " Blue palette
     let s:background = "none" " Blue0
     let s:column     = 236    " Blue1
-    let s:line       = 17     " Blue2
+    let s:line       = 24     " Blue2
     let s:window     = 24     " Blue3
     let s:comment    = 24     " Blue4
-    let s:selection  = 67     " Blue5
+    let s:selection  = 110    " Blue5
+    "117
     " Multi-color palette
     let s:foreground = 32
     let s:red        = 167
@@ -121,7 +122,8 @@ call <SID>X("NonText", s:selection, "", "")
 call <SID>X("SpecialKey", s:selection, "", "")
 call <SID>X("Search", s:column, s:olive, "")
 call <SID>X("IncSearch", s:pink, s:column, "")
-call <SID>X("TabLine", s:window, s:foreground, "reverse")
+call <SID>X("TabLine", s:foreground, s:window, "none")
+call <SID>X("TabLineSel", s:column, s:selection, "")
 call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
 call <SID>X("StatusLine", s:selection, s:background, "reverse")
 call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
@@ -135,15 +137,16 @@ call <SID>X("WarningMsg", s:red, "", "")
 call <SID>X("MatchParen", s:column, s:pink, "")
 call <SID>X("FoldColumn", s:line, s:background, "")
 call <SID>X("vimCommand", s:pink, "", "none")
-call <SID>X("DiffText", s:column, s:pink, "none")
-call <SID>X("DiffChange", s:column, s:grey, "none")
-call <SID>X("DiffAdd", s:column, s:selection, "none")
-call <SID>X("DiffDelete", s:line, s:selection, "none")
+call <SID>X("DiffText", s:grey, s:line, "none")
+call <SID>X("DiffChange", s:orange, s:line, "none")
+call <SID>X("DiffAdd", s:cyan, s:line, "none")
+call <SID>X("DiffDelete", s:red, s:line, "none")
+call <SID>X("WildMenu", s:selection, s:column, "none")
 if version >= 700
     call <SID>X("CursorColumn", "", s:line, "none")
     call <SID>X("Folded", s:selection, s:background, "")
-    call <SID>X("PMenu", s:background, s:foreground, "none")
-    call <SID>X("PMenuSel", s:background, s:comment, "")
+    call <SID>X("PMenu", s:column, s:selection, "none")
+    call <SID>X("PMenuSel", s:selection, s:column, "")
     call <SID>X("SignColumn", "", s:background, "none")
 endif
 if version >= 703
@@ -154,7 +157,7 @@ endif
 
 " Standard highlighting
 call <SID>X("Todo", s:purple, s:background, "none")
-call <SID>X("Title", s:cyan, "", "")
+call <SID>X("Title", s:green, "none", "none")
 call <SID>X("Identifier", s:orange, "", "none")
 call <SID>X("Statement", s:grey, "", "")
 call <SID>X("Conditional", s:foreground, "", "")
