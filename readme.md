@@ -4,11 +4,13 @@
 
 Bluedrake is a carefully designed palette of 16 colors composed of 8 base colors
 and 8 accent colors. The colors in the bluedrake palette were chosen using the
-HCL (Hue-Chroma-Luminance) color space. The 8 accent colors were chosen so
-that no color is brighter than another, that is, each accent color has the same
-chroma and luminance values, just different hues. The 8 base colors are composed
-of 6 monotone colors and 2 sequential gradient colors based off the darkest
-monotone, which allows consistency between light and dark themes.
+HCL (Hue-Chroma-Luminance) color space. The 8 accent colors were chosen so that
+no color is brighter than another, that is, each accent color has the same
+chroma and luminance values, just different hues. In addition, the accent colors
+are equally spaced on the color wheel, meaning adjacent colors have equal
+contrast. The 8 base colors are composed of 6 monotone colors and 2 sequential
+gradient colors based off the darkest monotone, which allows consistency between
+light and dark themes.
 
 
 ![Color Palette](/screenshots/palette.jpg)
