@@ -18,7 +18,7 @@ if has("gui_running")
     let s:base01 = "24384F" 
     let s:base10 = "3773a4"
     let s:base11 = "4187bf"
-    let s:base20 = "8692a1"
+    let s:base20 = "647285"
     let s:base21 = "97a2b0"
     let s:base30 = "dfe6ec"
     let s:base31 = "f2f8fc"
@@ -37,9 +37,9 @@ if has("gui_running")
     if &background=="light"
         let s:baseback0  = s:base31
         let s:baseback1  = s:base30
-        let s:basecolor0 = s:base21
+        let s:basecolor0 = s:base11
         let s:basecolor1 = s:base10
-        let s:basecolor2 = s:base11
+        let s:basecolor2 = s:base21
         let s:basecolor3 = s:base20
         let s:basefore0  = s:base00
         let s:basefore   = s:base01
@@ -116,7 +116,7 @@ if !has("gui_running")
         let s:base01  = "236"
         let s:base10  = "24"
         let s:base11  = "110"
-        let s:base20  = "246"
+        let s:base20  = "242"
         let s:base21  = "247"
         let s:base30  = "253"
         let s:base31  = "254"
@@ -144,10 +144,10 @@ if !has("gui_running")
     if &background=="light"
         let s:baseback0  = s:base31
         let s:baseback1  = s:base30
+        let s:basecolor0 = s:base11
         let s:basecolor1 = s:base10
-        let s:basecolor0 = s:base21
-        let s:basecolor2 = s:base20
-        let s:basecolor3 = s:base11
+        let s:basecolor2 = s:base21
+        let s:basecolor3 = s:base20
         let s:basefore0  = s:base00
         let s:basefore   = s:base01
     endif
@@ -168,9 +168,9 @@ endif
 
 " Vim highlighting
 call <SID>X("Normal", s:blue, s:baseback0, "")
-call <SID>X("Cursor", s:baseback0, s:basecolor2, "")
-call <SID>X("CursorLineNr", s:basecolor3, "", "none")
-call <SID>X("LineNr", s:basecolor0, s:baseback1, "")
+call <SID>X("Cursor", s:baseback1, s:basecolor3, "")
+call <SID>X("CursorLineNr", s:basecolor2, "", "none")
+call <SID>X("LineNr", s:basecolor2, s:baseback1, "")
 call <SID>X("NonText", s:basecolor3, "", "none")
 call <SID>X("SpecialKey", s:basecolor3, "", "")
 call <SID>X("Search", s:baseback1, s:yellow, "")
@@ -233,10 +233,10 @@ call <SID>X("Underlined", s:purple, s:baseback0, "underline")
 " Terminal and GUI differences (no italics in mac terminal)
 if has("gui_running")
     call <SID>X("String", s:green, "", "italic")
-    call <SID>X("Comment", s:basecolor0, "", "italic")
+    call <SID>X("Comment", s:basecolor2, "", "italic")
 else
     call <SID>X("String", s:green, "", "")
-    call <SID>X("Comment", s:basecolor0, "", "")
+    call <SID>X("Comment", s:basecolor2, "", "")
     call <SID>X("SpellBad", s:red, s:baseback0, "")
 endif
 
