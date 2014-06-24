@@ -149,7 +149,7 @@ call <SID>X("Normal", s:blue, s:baseback0, "")
 call <SID>X("Cursor", s:baseback0, s:basecolor2, "")
 call <SID>X("CursorLineNr", s:basecolor3, "", "none")
 call <SID>X("LineNr", s:basecolor0, s:baseback1, "")
-call <SID>X("NonText", s:basecolor3, "", "")
+call <SID>X("NonText", s:basecolor3, "", "none")
 call <SID>X("SpecialKey", s:basecolor3, "", "")
 call <SID>X("Search", s:baseback1, s:yellow, "")
 call <SID>X("IncSearch", s:magenta, s:baseback1, "")
@@ -165,6 +165,8 @@ call <SID>X("ModeMsg", s:green, "", "")
 call <SID>X("MoreMsg", s:green, "", "")
 call <SID>X("Question", s:green, "", "")
 call <SID>X("WarningMsg", s:red, "", "")
+call <SID>X("ErrorMsg", s:basefore0, s:red, "")
+call <SID>X("Error", s:basefore0, s:red, "")
 call <SID>X("MatchParen", s:baseback1, s:magenta, "")
 call <SID>X("FoldColumn", s:basecolor0, s:baseback0, "")
 call <SID>X("vimCommand", s:magenta, "", "none")
@@ -178,8 +180,8 @@ if version >= 700
     call <SID>X("CursorColumn", "", s:basecolor0, "none")
     call <SID>X("Folded", s:basecolor1, s:baseback0, "")
     call <SID>X("PMenu", s:baseback1, s:basecolor1, "none")
-    call <SID>X("PMenuSel", s:basecolor1, s:baseback1, "")
-    call <SID>X("SignColumn", "", s:baseback0, "none")
+    call <SID>X("PMenuSel", s:basefore0, s:basecolor0, "")
+    call <SID>X("SignColumn", s:basecolor0, s:baseback0, "")
 endif
 if version >= 703
     call <SID>X("ColorColumn", "", s:baseback1, "none")
@@ -214,6 +216,13 @@ else
     call <SID>X("String", s:green, "", "")
     call <SID>X("Comment", s:basecolor0, "", "")
     call <SID>X("SpellBad", s:red, s:baseback0, "")
+endif
+
+
+" Insert mode status line change
+if exists("g:bluedrake_statuschange")
+    au InsertEnter * call <SID>X("StatusLine", s:green, s:baseback0, "reverse")
+    au InsertLeave * call <SID>X("StatusLine", s:basecolor1, s:baseback0, "reverse")
 endif
 
 
