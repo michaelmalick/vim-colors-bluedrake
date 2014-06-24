@@ -1,40 +1,7 @@
-" Bluedrake Color Scheme
+" bluedrake.vim - a color palette for perfectionists
 "
 " Designer: Michael Malick
-" Updated:  21 Jun 2014 
-" Version:  0.06
-"
-" Bluedrake is a dark color scheme with lots of blue. The palette for this
-" scheme was selected using consistent luminance and chroma values (i.e., only
-" the hue value was changed) making each color equally visible. 
-"
-" Chroma    = 100
-" Luminance = 55 
-"
-" Accent colors:
-"   xx <- scales::hue_pal(h = c(0, 360) + 15, c = 100, l = 55, h.start = 0, 
-"                         direction = 1)
-"   barplot(rep(1, 10), col = xx(10), names.arg=xx(10))  
-"
-" Gradient colors:
-"   xx <- scales::seq_gradient_pal(low = '#132B43', high = '#56B1F7', 
-"                                  space = 'Lab')
-"   colors <- xx(seq(0, 1, length = 8))
-"   barplot(rep(1, 8), col = colors, names.arg = colors)
-"
-" Monotone colors:
-"   xx <- scales::seq_gradient_pal(low = '#132B43', high = '#F2F8FC', 
-"                                  space = 'Lab')
-"   colors <- xx(seq(0, 1, length = 14))
-"   barplot(rep(1, 14), col = colors, names.arg = colors)
-" 
-"
-" The function scheme used in this theme was adapted from Chris Kemson's
-" Tommorrow Theme available:
-" https://github.com/chriskempson/tomorrow-theme/tree/master/vim/colors
-"
-" There is no background set when vim is running the terminal because the blues
-" in the 256 color palette are not adequete. 
+" Version:  0.07
 
 
 hi clear
@@ -79,14 +46,14 @@ if has("gui_running")
     endif
 
     " Multi-color palette (hue)
-    let s:blue   = "0096dc"
-    let s:red    = "da5b51"
-    let s:orange = "bb7600"
-    let s:yellow = "888b00"
-    let s:green  = "009b00"
-    let s:cyan   = "00a5aa"
-    let s:purple = "7a74ef"
-    let s:magenta   = "ce4ad9"
+    let s:blue    = "0096dc"
+    let s:red     = "da5b51"
+    let s:orange  = "bb7600"
+    let s:yellow  = "888b00"
+    let s:green   = "009b00"
+    let s:cyan    = "00a5aa"
+    let s:purple  = "7a74ef"
+    let s:magenta = "ce4ad9"
 
     function! <SID>X(group, fg, bg, attr)
         if a:fg != ""
@@ -104,41 +71,41 @@ endif
 
 if !has("gui_running")
     if !exists("g:bluedrake_256")
-        let s:base00 = "0"
-        let s:base01 = "8"
-        let s:base10 = "11"
-        let s:base11 = "12"
-        let s:base20 = "9"
-        let s:base21 = "14"
-        let s:base30 = "7"
-        let s:base31 = "15"
-        let s:blue   = "4"
-        let s:red    = "1"
-        let s:orange = "10"
-        let s:yellow = "3"
-        let s:green  = "2"
-        let s:cyan   = "6"
-        let s:purple = "13"
-        let s:magenta   = "5"
+        let s:base00  = "0"
+        let s:base01  = "8"
+        let s:base10  = "11"
+        let s:base11  = "12"
+        let s:base20  = "9"
+        let s:base21  = "14"
+        let s:base30  = "7"
+        let s:base31  = "15"
+        let s:blue    = "4"
+        let s:red     = "1"
+        let s:orange  = "10"
+        let s:yellow  = "3"
+        let s:green   = "2"
+        let s:cyan    = "6"
+        let s:purple  = "13"
+        let s:magenta = "5"
     endif
 
     if exists("g:bluedrake_256")
-        let s:base00 = "235"
-        let s:base01 = "236"
-        let s:base10 = "24"
-        let s:base11 = "110"
-        let s:base20 = "246"
-        let s:base21 = "247"
-        let s:base30 = "253"
-        let s:base31 = "254"
-        let s:blue   = "32"
-        let s:red    = "167"
-        let s:orange = "136"
-        let s:yellow = "100"
-        let s:green  = "28"
-        let s:cyan   = "37"
-        let s:purple = "99"
-        let s:magenta   = "170"
+        let s:base00  = "235"
+        let s:base01  = "236"
+        let s:base10  = "24"
+        let s:base11  = "110"
+        let s:base20  = "246"
+        let s:base21  = "247"
+        let s:base30  = "253"
+        let s:base31  = "254"
+        let s:blue    = "32"
+        let s:red     = "167"
+        let s:orange  = "136"
+        let s:yellow  = "100"
+        let s:green   = "28"
+        let s:cyan    = "37"
+        let s:purple  = "99"
+        let s:magenta = "170"
     endif
 
     if &background=="dark"
@@ -236,6 +203,7 @@ call <SID>X("Operator", s:cyan, "", "none")
 call <SID>X("Type", s:orange, "", "none")
 call <SID>X("Define", s:purple, "", "none")
 call <SID>X("Include", s:red, "", "none")
+call <SID>X("Underlined", s:purple, s:baseback0, "underline")
 
 
 " Terminal and GUI differences (no italics in mac terminal)
