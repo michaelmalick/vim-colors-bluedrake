@@ -59,24 +59,24 @@ if has("gui_running")
     " let s:magenta = "df3ebf"
 
     " C = 90 L = 55
-    " let s:blue    = "0094d4"
-    " let s:red     = "d75a69"
-    " let s:orange  = "b67800"
-    " let s:yellow  = "768f00"
-    " let s:green   = "009e3c"
-    " let s:cyan    = "00a39a"
-    " let s:purple  = "976ce2"
-    " let s:magenta = "d74bb9"
+    let s:blue    = "0094d4"
+    let s:red     = "d75a69"
+    let s:orange  = "b67800"
+    let s:yellow  = "768f00"
+    let s:green   = "009e3c"
+    let s:cyan    = "00a39a"
+    let s:purple  = "976ce2"
+    let s:magenta = "d74bb9"
 
     " C = 80 L = 55
-    let s:blue    = "0092cc"
-    let s:red     = "d0606d"
-    let s:orange  = "b27900"
-    let s:yellow  = "778e00"
-    let s:green   = "009c47"
-    let s:cyan    = "009f97"
-    let s:purple  = "9570d8"
-    let s:magenta = "ce55b3"
+    " let s:blue    = "0092cc"
+    " let s:red     = "d0606d"
+    " let s:orange  = "b27900"
+    " let s:yellow  = "778e00"
+    " let s:green   = "009c47"
+    " let s:cyan    = "009f97"
+    " let s:purple  = "9570d8"
+    " let s:magenta = "ce55b3"
 
     function! <SID>X(group, fg, bg, attr)
         if a:fg != ""
@@ -204,6 +204,7 @@ if version >= 700
     call <SID>X("Folded", s:basecolor1, s:baseback0, "")
     call <SID>X("PMenu", s:baseback1, s:basecolor1, "none")
     call <SID>X("PMenuSel", s:basefore0, s:basecolor0, "")
+    call <SID>X("PMenuThumb", s:basecolor2, s:basecolor0, "")
     call <SID>X("SignColumn", s:basecolor0, s:baseback0, "")
 endif
 if version >= 703
