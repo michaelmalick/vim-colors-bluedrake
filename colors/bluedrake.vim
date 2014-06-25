@@ -17,7 +17,8 @@ if has("gui_running")
     let s:base00 = "132b43"
     let s:base01 = "24384F" 
     let s:base10 = "3773a4"
-    let s:base11 = "4187bf"
+    let s:base11 = "4b9cda"
+    "let s:base11 = "4187bf"
     let s:base20 = "647285"
     let s:base21 = "97a2b0"
     let s:base30 = "dfe6ec"
@@ -169,8 +170,8 @@ endif
 " Vim highlighting
 call <SID>X("Normal", s:blue, s:baseback0, "")
 call <SID>X("Cursor", s:baseback1, s:basecolor3, "")
-call <SID>X("CursorLineNr", s:basecolor2, "", "none")
-call <SID>X("LineNr", s:basecolor2, s:baseback1, "")
+call <SID>X("CursorLineNr", s:basecolor2, s:baseback1, "none")
+call <SID>X("LineNr", s:basecolor2, s:baseback0, "")
 call <SID>X("NonText", s:basecolor3, "", "none")
 call <SID>X("SpecialKey", s:basecolor3, "", "")
 call <SID>X("Search", s:baseback1, s:yellow, "")
@@ -182,7 +183,7 @@ call <SID>X("StatusLine", s:basecolor1, s:baseback0, "reverse")
 call <SID>X("StatusLineNC", s:basecolor0, s:baseback0, "reverse")
 call <SID>X("VertSplit", s:basecolor1, s:basecolor1, "none")
 call <SID>X("Visual", s:baseback1, s:basecolor1, "")
-call <SID>X("Directory", s:cyan, "", "")
+call <SID>X("Directory", s:cyan, "", "")  
 call <SID>X("ModeMsg", s:green, "", "")
 call <SID>X("MoreMsg", s:green, "", "")
 call <SID>X("Question", s:green, "", "")
