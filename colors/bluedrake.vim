@@ -18,7 +18,6 @@ if has("gui_running")
     let s:base01 = "24384F" 
     let s:base10 = "3773a4"
     let s:base11 = "4b9cda"
-    "let s:base11 = "4187bf"
     let s:base20 = "647285"
     let s:base21 = "97a2b0"
     let s:base30 = "dfe6ec"
