@@ -24,6 +24,7 @@ light and dark themes.
   - Equally bright accent colors
   - Base color palette based on a range of blues
   - GUI and terminal compatible (see Installation for more info)
+  - Built-in Vim [Airline](https://github.com/bling/vim-airline) theme
 
 
 

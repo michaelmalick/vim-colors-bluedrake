@@ -43,7 +43,7 @@ if has("gui_running")
         let s:basecolor2 = s:base21
         let s:basecolor3 = s:base20
         let s:basefore0  = s:base00
-        let s:basefore   = s:base01
+        let s:basefore1  = s:base01
     endif
 
     " Multi-color palette (hue)
@@ -150,7 +150,7 @@ if !has("gui_running")
         let s:basecolor2 = s:base21
         let s:basecolor3 = s:base20
         let s:basefore0  = s:base00
-        let s:basefore   = s:base01
+        let s:basefore1   = s:base01
     endif
 
     function! <SID>X(group, fg, bg, attr)
@@ -174,13 +174,13 @@ call <SID>X("CursorLineNr", s:basecolor2, s:baseback1, "none")
 call <SID>X("LineNr", s:basecolor2, s:baseback0, "")
 call <SID>X("NonText", s:basecolor3, "", "none")
 call <SID>X("SpecialKey", s:basecolor3, "", "")
-call <SID>X("Search", s:baseback1, s:yellow, "")
+call <SID>X("Search", s:baseback1, s:orange, "")
 call <SID>X("IncSearch", s:magenta, s:baseback1, "")
 call <SID>X("TabLine", s:baseback1, s:basecolor1, "none")
 call <SID>X("TabLineSel", s:basecolor1, s:baseback0, "")
 call <SID>X("TabLineFill", s:basecolor1, s:blue, "reverse")
 call <SID>X("StatusLine", s:basecolor1, s:baseback0, "reverse")
-call <SID>X("StatusLineNC", s:basecolor0, s:baseback0, "reverse")
+call <SID>X("StatusLineNC", s:basecolor2, s:baseback0, "reverse")
 call <SID>X("VertSplit", s:basecolor1, s:basecolor1, "none")
 call <SID>X("Visual", s:baseback1, s:basecolor1, "")
 call <SID>X("Directory", s:cyan, "", "")  
@@ -219,7 +219,7 @@ call <SID>X("Title", s:red, "", "none")
 call <SID>X("Identifier", s:magenta, "", "none")
 call <SID>X("Statement", s:yellow, "", "none")
 call <SID>X("Conditional", s:blue, "", "none")
-call <SID>X("Repeat", s:blue, "", "none")
+call <SID>X("Repeat", s:magenta, "", "none")
 call <SID>X("Structure", s:purple, "", "none")
 call <SID>X("Function", s:cyan, "", "none")
 call <SID>X("Constant", s:red, "", "none")
@@ -243,12 +243,6 @@ else
 endif
 
 
-" Insert mode status line change
-if exists("g:bluedrake_statuschange")
-    au InsertEnter * call <SID>X("StatusLine", s:green, s:baseback0, "reverse")
-    au InsertLeave * call <SID>X("StatusLine", s:basecolor1, s:baseback0, "reverse")
-endif
-
 
 " Pandoc
 call <SID>X("pandocUListItem", s:basecolor3, "", "")
@@ -257,3 +251,7 @@ call <SID>X("pandocUListItemBullet", s:basecolor3, "", "")
 call <SID>X("pandocAtxHeader", s:orange, "", "")
 call <SID>X("AtxStart", s:orange, "", "")
 call <SID>X("pandocSetexHeader", s:orange, "", "")
+call <SID>X("pandocPCite", s:purple, "", "")
+call <SID>X("pandocPCiteAnchor", s:purple, "", "")
+call <SID>X("pandocReferenceLabel", s:purple, "", "") " wrapped citations
+call <SID>X("pandocReferenceURL", s:red, "", "")
