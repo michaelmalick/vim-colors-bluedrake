@@ -13,12 +13,12 @@ function! airline#themes#bluedrake#refresh()
 """"""""""""""""""""""""""""""""""""""""""""""""
   let s:base00 = {'t': s:ansi_colors ? '0' : (s:tty ? '0' : 235), 'g': '#24323b'}
   let s:base01 = {'t': s:ansi_colors ? 8 : (s:tty ? '0' : 236), 'g': '#323f48'}
-  let s:base10 = {'t': s:ansi_colors ? 11 : (s:tty ? '0' : 24), 'g': '#426b82'}
-  let s:base11 = {'t': s:ansi_colors ? 12 : (s:tty ? '7' : 110), 'g': '#92b5cd'}
-  let s:base20 = {'t': s:ansi_colors ? 9 : (s:tty ? '7' : 242), 'g': '#6b767e'}
-  let s:base21 = {'t': s:ansi_colors ? 14 : (s:tty ? '7' : 247), 'g': '#98a2ab'}
-  let s:base30 = {'t': s:ansi_colors ? 7 : (s:tty ? '7' : 253), 'g': '#d7e2ea'}
-  let s:base31 = {'t': s:ansi_colors ? 15 : (s:tty ? '7' : 254), 'g': '#e8f2fb'}
+  let s:base10 = {'t': s:ansi_colors ? 11 : (s:tty ? '0' : 24), 'g': '#446c84'}
+  let s:base11 = {'t': s:ansi_colors ? 12 : (s:tty ? '7' : 110), 'g': '#96b9d1'}
+  let s:base20 = {'t': s:ansi_colors ? 9 : (s:tty ? '7' : 242), 'g': '#6d7780'}
+  let s:base21 = {'t': s:ansi_colors ? 14 : (s:tty ? '7' : 247), 'g': '#9ba6ae'}
+  let s:base30 = {'t': s:ansi_colors ? 7 : (s:tty ? '7' : 253), 'g': '#dce7ef'}
+  let s:base31 = {'t': s:ansi_colors ? 15 : (s:tty ? '7' : 254), 'g': '#edf8ff'}
 
   let s:blue    = {'t': s:ansi_colors ? 4 : (s:tty ? '4' : 32 ), 'g': '#0094d4'}
   let s:red     = {'t': s:ansi_colors ? 1 : (s:tty ? '1' : 167), 'g': '#d75a69'}

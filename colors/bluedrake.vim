@@ -16,12 +16,12 @@ let g:colors_name = "bluedrake"
 if has("gui_running") 
     let s:base00 = "24323b"
     let s:base01 = "323f48" 
-    let s:base10 = "426b82"
-    let s:base11 = "92b5cd"
-    let s:base20 = "6b767e"
-    let s:base21 = "98a2ab"
-    let s:base30 = "d7e2ea"
-    let s:base31 = "e8f2fb"
+    let s:base10 = "446c84"
+    let s:base11 = "96b9d1"
+    let s:base20 = "6d7780"
+    let s:base21 = "9ba6ae"
+    let s:base30 = "dce7ef"
+    let s:base31 = "edf8ff"
 
     if &background=="dark"
         let s:baseback0  = s:base00
