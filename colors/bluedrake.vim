@@ -14,14 +14,14 @@ let g:colors_name = "bluedrake"
 " let g:bluedrake_256 = 1
 
 if has("gui_running") 
-    let s:base00 = "132b43"
-    let s:base01 = "24384F" 
-    let s:base10 = "3773a4"
-    let s:base11 = "4b9cda"
-    let s:base20 = "647285"
-    let s:base21 = "97a2b0"
-    let s:base30 = "dfe6ec"
-    let s:base31 = "f2f8fc"
+    let s:base00 = "24323b"
+    let s:base01 = "323f48" 
+    let s:base10 = "426b82"
+    let s:base11 = "92b5cd"
+    let s:base20 = "6b767e"
+    let s:base21 = "98a2ab"
+    let s:base30 = "d7e2ea"
+    let s:base31 = "e8f2fb"
 
     if &background=="dark"
         let s:baseback0  = s:base00
@@ -149,7 +149,7 @@ if !has("gui_running")
         let s:basecolor2 = s:base21
         let s:basecolor3 = s:base20
         let s:basefore0  = s:base00
-        let s:basefore1   = s:base01
+        let s:basefore1  = s:base01
     endif
 
     function! <SID>X(group, fg, bg, attr)
@@ -180,7 +180,7 @@ call <SID>X("TabLineSel", s:basecolor1, s:baseback0, "")
 call <SID>X("TabLineFill", s:basecolor1, s:blue, "reverse")
 call <SID>X("StatusLine", s:basecolor1, s:baseback0, "reverse")
 call <SID>X("StatusLineNC", s:basecolor2, s:baseback0, "reverse")
-call <SID>X("VertSplit", s:basecolor1, s:basecolor1, "none")
+call <SID>X("VertSplit", s:basecolor2, s:basecolor2, "none")
 call <SID>X("Visual", s:baseback1, s:basecolor1, "")
 call <SID>X("Directory", s:cyan, "", "")  
 call <SID>X("ModeMsg", s:green, "", "")

@@ -11,14 +11,14 @@ function! airline#themes#bluedrake#refresh()
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """"""""""""""""""""""""""""""""""""""""""""""""
-  let s:base00 = {'t': s:ansi_colors ? '0' : (s:tty ? '0' : 235), 'g': '#132b43'}
-  let s:base01 = {'t': s:ansi_colors ? 8 : (s:tty ? '0' : 236), 'g': '#24384F'}
-  let s:base10 = {'t': s:ansi_colors ? 11 : (s:tty ? '0' : 24), 'g': '#3773a4'}
-  let s:base11 = {'t': s:ansi_colors ? 12 : (s:tty ? '7' : 110), 'g': '#4b9cda'}
-  let s:base20 = {'t': s:ansi_colors ? 9 : (s:tty ? '7' : 242), 'g': '#647285'}
-  let s:base21 = {'t': s:ansi_colors ? 14 : (s:tty ? '7' : 247), 'g': '#97a2b0'}
-  let s:base30 = {'t': s:ansi_colors ? 7 : (s:tty ? '7' : 253), 'g': '#dfe6ec'}
-  let s:base31 = {'t': s:ansi_colors ? 15 : (s:tty ? '7' : 254), 'g': '#f2f8fc'}
+  let s:base00 = {'t': s:ansi_colors ? '0' : (s:tty ? '0' : 235), 'g': '#24323b'}
+  let s:base01 = {'t': s:ansi_colors ? 8 : (s:tty ? '0' : 236), 'g': '#323f48'}
+  let s:base10 = {'t': s:ansi_colors ? 11 : (s:tty ? '0' : 24), 'g': '#426b82'}
+  let s:base11 = {'t': s:ansi_colors ? 12 : (s:tty ? '7' : 110), 'g': '#92b5cd'}
+  let s:base20 = {'t': s:ansi_colors ? 9 : (s:tty ? '7' : 242), 'g': '#6b767e'}
+  let s:base21 = {'t': s:ansi_colors ? 14 : (s:tty ? '7' : 247), 'g': '#98a2ab'}
+  let s:base30 = {'t': s:ansi_colors ? 7 : (s:tty ? '7' : 253), 'g': '#d7e2ea'}
+  let s:base31 = {'t': s:ansi_colors ? 15 : (s:tty ? '7' : 254), 'g': '#e8f2fb'}
 
   let s:blue    = {'t': s:ansi_colors ? 4 : (s:tty ? '4' : 32 ), 'g': '#0094d4'}
   let s:red     = {'t': s:ansi_colors ? 1 : (s:tty ? '1' : 167), 'g': '#d75a69'}
@@ -61,7 +61,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Normal mode
 let s:N1 = [s:baseback1, s:basecolor1, '']
-let s:N2 = [s:baseback1, s:basecolor0, '']
+let s:N2 = [s:basecolor1, s:basecolor0, '']
 let s:N3 = [s:basecolor1, s:baseback1, '']
 let s:NF = [s:orange, s:N3[1], '']
 let s:NW = [s:base31, s:orange, '']
@@ -112,7 +112,7 @@ let s:IA = [s:basecolor0, s:baseback1, '']
         \ [s:IA[0].g, s:IA[1].g, s:IA[0].t, s:IA[1].t, s:IA[2]],
         \ [s:IA[0].g, s:IA[1].g, s:IA[0].t, s:IA[1].t, s:IA[2]])
   let g:airline#themes#bluedrake#palette.inactive_modified = {
-        \ 'airline_c': [s:NMi[0].g, '', s:NMi[0].t, '', s:NMi[2]]}
+        \ 'airline_c': [s:NM[0].g, '', s:NM[0].t, '', s:NM[2]]}
 
   let g:airline#themes#bluedrake#palette.normal = airline#themes#generate_color_map(
         \ [s:N1[0].g, s:N1[1].g, s:N1[0].t, s:N1[1].t, s:N1[2]],

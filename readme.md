@@ -4,13 +4,17 @@
 
 Bluedrake is a carefully designed palette of 16 colors composed of 8 base colors
 and 8 accent colors. The colors in the bluedrake palette were chosen using the
-HCL (Hue-Chroma-Luminance) color space. The 8 accent colors were chosen so that
-no color is brighter than another, that is, each accent color has the same
-chroma and luminance values, just different hues. In addition, the accent colors
-are equally spaced on the color wheel, meaning adjacent colors have equal
-contrast. The 8 base colors are composed of 6 monotone colors and 2 sequential
-gradient colors based off the darkest monotone, which allows consistency between
-light and dark themes.
+HCL (Hue-Chroma-Luminance) color space, which is a transformation of the
+[CIELUV](https://en.wikipedia.org/wiki/CIELUV) color space (see
+[here](http://www.r-project.org/conferences/DSC-2003/Proceedings/Ihaka.pdf) and
+[here](https://www.sciencedirect.com/science/article/pii/S0167947308005549?np=y)
+for details). The 8 accent colors were chosen so that no color stands out
+compared to another color, that is, each accent color has the same chroma and
+luminance values, just different hues. In addition, the accent colors are
+equally spaced on the color wheel, meaning adjacent colors have equal contrast.
+The 8 base colors all have the same hue as the blue accent color and are
+composed of two gradients; a six tone gradient with a low luminance and a two
+tone gradient with a medium luminance.
 
 
 ![Color Palette](/screenshots/palette.jpg)
@@ -21,8 +25,8 @@ light and dark themes.
 
 # Features
   - Light and dark themes that use the same 16 color palette
-  - Equally bright accent colors
-  - Base color palette based on a range of blues
+  - Base color palette with consistent hue
+  - Equally visible accent colors
   - GUI and terminal compatible (see Installation for more info)
   - Built-in Vim [Airline](https://github.com/bling/vim-airline) theme
 
@@ -63,8 +67,8 @@ only use the 256 palette put the following line in your `.vimrc` file before the
 
 
 # Options
-If you want to be able to easily toggle between the light and dark themes add
-the following lines to your `.vimrc` file:
+If you want to toggle between the light and dark themes add the following lines
+to your `.vimrc` file:
 
     function! ColorSchemeToggle()
         if &background=="dark"
