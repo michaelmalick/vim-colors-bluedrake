@@ -14,13 +14,13 @@ let g:colors_name = "bluedrake"
 " let g:bluedrake_256 = 1
 
 if has("gui_running") 
-    let s:base00 = "24323b"
-    let s:base01 = "323f48" 
-    let s:base10 = "446c84"
-    let s:base11 = "96b9d1"
-    let s:base20 = "6d7780"
-    let s:base21 = "9ba6ae"
-    let s:base30 = "dce7ef"
+    let s:base00 = "1f2e37"
+    let s:base01 = "2e3b44" 
+    let s:base10 = "406980"
+    let s:base11 = "94b7cf"
+    let s:base20 = "6a747d"
+    let s:base21 = "99a4ac"
+    let s:base30 = "dce6ef"
     let s:base31 = "edf8ff"
 
     if &background=="dark"
@@ -169,7 +169,7 @@ endif
 " Vim highlighting
 call <SID>X("Normal", s:blue, s:baseback0, "")
 call <SID>X("Cursor", s:baseback1, s:basecolor3, "")
-call <SID>X("CursorLineNr", s:basecolor2, s:baseback1, "none")
+call <SID>X("CursorLineNr", s:basecolor1, s:baseback1, "none")
 call <SID>X("LineNr", s:basecolor2, s:baseback0, "")
 call <SID>X("NonText", s:basecolor3, "", "none")
 call <SID>X("SpecialKey", s:basecolor3, "", "")
@@ -200,7 +200,8 @@ call <SID>X("WildMenu", s:basecolor1, s:baseback1, "none")
 if version >= 700
     call <SID>X("CursorLine", "", s:baseback1, "none")
     call <SID>X("CursorColumn", "", s:basecolor0, "none")
-    call <SID>X("Folded", s:basecolor1, s:baseback0, "")
+    call <SID>X("Folded", s:basecolor3, s:baseback0, "")
+    " call <SID>X("Folded", s:basecolor2, s:baseback0, "")
     call <SID>X("PMenu", s:baseback1, s:basecolor1, "none")
     call <SID>X("PMenuSel", s:basefore0, s:basecolor0, "")
     call <SID>X("PMenuThumb", s:basecolor2, s:basecolor0, "")
