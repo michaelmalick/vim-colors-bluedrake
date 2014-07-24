@@ -1,7 +1,7 @@
 " bluedrake.vim - a color palette for perfectionists
 "
 " Designer: Michael Malick
-" Version:  0.07
+" Version:  0.08
 
 
 hi clear
@@ -14,13 +14,13 @@ let g:colors_name = "bluedrake"
 " let g:bluedrake_256 = 1
 
 if has("gui_running") 
-    let s:base00 = "1f2e37"
-    let s:base01 = "2e3b44" 
-    let s:base10 = "406980"
-    let s:base11 = "94b7cf"
-    let s:base20 = "6a747d"
-    let s:base21 = "99a4ac"
-    let s:base30 = "dce6ef"
+    let s:base00 = "172832"
+    let s:base01 = "27353e" 
+    let s:base10 = "39647b"
+    let s:base11 = "92b5cc"
+    let s:base20 = "657078"
+    let s:base21 = "96a0a9"
+    let s:base30 = "dbe6ee"
     let s:base31 = "edf8ff"
 
     if &background=="dark"
