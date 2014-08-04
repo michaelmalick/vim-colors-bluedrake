@@ -12,21 +12,19 @@ for details). The 8 accent colors were chosen so that no color stands out
 compared to another color, that is, each accent color has the same chroma and
 luminance values, just different hues. In addition, the accent colors are
 equally spaced on the color wheel, meaning adjacent colors have equal contrast.
-The 8 base colors all have the same hue as the blue accent color and are
-composed of two gradients; a six tone gradient with a low chroma value and a two
-tone gradient with a medium chroma value.
+The 8 base colors are a sequential color palette with all colors having the same
+hue.
 
 
 ![Color Palette](/screenshots/palette.jpg)
-![Light Theme](/screenshots/screen_light.png)
-![Dark Theme](/screenshots/screen_dark.png)
+![Light Theme](/screenshots/screen.jpg)
 
 
 
 # Features
   - Light and dark themes that use the same 16 color palette
-  - Base color palette with consistent hue
   - Equally visible accent colors
+  - Base color palette with consistent hue
   - GUI and terminal compatible (see Installation for more info)
   - Built-in Vim [Airline](https://github.com/bling/vim-airline) theme
 
@@ -94,30 +92,32 @@ the terminal add the following lines to your `.vimrc` file:
 # Colors
 Listed below are the color specs for the bluedrake palette:
 
-| Name    | Term Name | 16 | Hex     | Term 256 |  R  |  G  |  B  |
-|---------|-----------|----|---------|----------|-----|-----|-----|
-| blue    | blue      | 4  | #0096dc | 32       | 0   | 150 | 220 |
-| red     | red       | 1  | #da5b51 | 167      | 218 | 91  | 81  |
-| orange  | brgreen   | 10 | #bb7600 | 136      | 187 | 118 | 0   |
-| yellow  | yellow    | 3  | #888b00 | 100      | 136 | 139 | 0   |
-| green   | green     | 2  | #009b00 | 28       | 0   | 155 | 0   |
-| cyan    | cyan      | 6  | #00a5aa | 37       | 0   | 165 | 170 |
-| purple  | brmagenta | 13 | #7a74ef | 99       | 122 | 116 | 239 |
-| magenta | magenta   | 5  | #ce4ad9 | 170      | 206 | 74  | 217 |
-| base00  | black     | 0  | #132b43 | 235      | 19  | 43  | 67  |
-| base01  | brblack   | 8  | #24384F | 236      | 36  | 56  | 79  |
-| base10  | bryellow  | 11 | #3773a4 | 24       | 55  | 115 | 164 |
-| base11  | brblue    | 12 | #4187bf | 110      | 65  | 135 | 191 |
-| base20  | brred     | 9  | #8692a1 | 246      | 134 | 146 | 161 |
-| base21  | brcyan    | 14 | #97a2b0 | 247      | 151 | 162 | 176 |
-| base30  | white     | 7  | #dfe6ec | 253      | 223 | 230 | 236 |
-| base31  | brwhite   | 15 | #f2f8fc | 254      | 242 | 248 | 252 |
+
+|Name    | Term      | 16 Hex     | 256 | H   | C     | L     | R   | G   | B  |
+|--------|-----------|------------|-----|-----|-------|-------|-----|-----|----|
+|red     | red       | 1  #d75a69 | 167 | 7   | 90    | 55    | 215 | 90  | 105|
+|orange  | brgreen   | 10 #b67800 | 136 | 52  | 90    | 55    | 182 | 120 | 0  |
+|yellow  | yellow    | 3  #768f00 | 100 | 97  | 90    | 55    | 118 | 143 | 0  |
+|green   | green     | 2  #009e3c | 28  | 142 | 90    | 55    | 0   | 158 | 60 |
+|cyan    | cyan      | 6  #00a39a | 37  | 187 | 90    | 55    | 0   | 163 | 154|
+|blue    | blue      | 4  #0094d4 | 32  | 232 | 90    | 55    | 0   | 148 | 212|
+|purple  | brmagenta | 13 #976ce2 | 99  | 277 | 90    | 55    | 151 | 108 | 226|
+|magenta | magenta   | 5  #d74bb9 | 170 | 322 | 90    | 55    | 215 | 75  | 185|
+|base00  | black     | 0  #002d49 | 235 | 232 | 30.00 | 15.00 | 0   | 45  | 73 |
+|base01  | brblack   | 8  #003951 | 236 | 232 | 28.46 | 21.31 | 0   | 57  | 81 |
+|base10  | bryellow  | 11 #2f5468 | 24  | 232 | 25.38 | 40.23 | 47  | 84  | 104|
+|base11  | brblue    | 12 #b4c3cf | 110 | 232 | 14.62 | 71.77 | 180 | 195 | 207|
+|base20  | brred     | 9  #577284 | 242 | 232 | 22.31 | 46.54 | 87  | 114 | 132|
+|base21  | brcyan    | 14 #8ea2b0 | 247 | 232 | 17.69 | 65.46 | 142 | 162 | 176|
+|base30  | white     | 7  #dae6f0 | 253 | 232 | 11.54 | 90.70 | 218 | 230 | 240|
+|base31  | brwhite   | 15 #edf8ff | 254 | 232 | 10.00 | 97.00 | 237 | 248 | 255|
+
 
 Table Notes:
 
-  1. Term Name = the terminal name mapped to the color, br stands for bright
+  1. Term = the terminal name mapped to the color, br stands for bright
   2. 16 = color code for the 16 base terminal colors the color is mapped to
-  3. Term 256 = the 256 color code the color is mapped to
+  3. 256 = the 256 color code the color is mapped to
 
 
 
