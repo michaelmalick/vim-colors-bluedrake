@@ -4,16 +4,17 @@
 
 Bluedrake is a carefully designed palette of 16 colors composed of 8 base colors
 and 8 accent colors. The colors in the bluedrake palette were chosen using the
-HCL (Hue-Chroma-Luminance) color space, which is a transformation of the
-[CIELUV](https://en.wikipedia.org/wiki/CIELUV) color space (see
-[here](http://www.r-project.org/conferences/DSC-2003/Proceedings/Ihaka.pdf) and
+perceptually-based HCL (Hue-Chroma-Luminance) color space, which is a
+transformation of the [CIELUV](https://en.wikipedia.org/wiki/CIELUV) color space
+(see [here](http://www.r-project.org/conferences/DSC-2003/Proceedings/Ihaka.pdf)
+and
 [here](https://www.sciencedirect.com/science/article/pii/S0167947308005549?np=y)
 for details). The 8 accent colors were chosen so that no color stands out
 compared to another color, that is, each accent color has the same chroma and
 luminance values, just different hues. In addition, the accent colors are
 equally spaced on the color wheel, meaning adjacent colors have equal contrast.
 The 8 base colors are a sequential color palette with all colors having the same
-hue.
+hue that is the same as the blue in the accent colors.
 
 
 ![Color Palette](/screenshots/palette.jpg)
