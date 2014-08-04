@@ -14,13 +14,13 @@ let g:colors_name = "bluedrake"
 " let g:bluedrake_256 = 1
 
 if has("gui_running") 
-    let s:base00 = "172832"
-    let s:base01 = "27353e" 
-    let s:base10 = "39647b"
-    let s:base11 = "92b5cc"
-    let s:base20 = "657078"
-    let s:base21 = "96a0a9"
-    let s:base30 = "dbe6ee"
+    let s:base00 = "002d49"
+    let s:base01 = "003951" 
+    let s:base10 = "2f5468"
+    let s:base11 = "b4c3cf"
+    let s:base20 = "577284"
+    let s:base21 = "8ea2b0"
+    let s:base30 = "dae6f0"
     let s:base31 = "edf8ff"
 
     if &background=="dark"
@@ -170,7 +170,7 @@ endif
 call <SID>X("Normal", s:blue, s:baseback0, "")
 call <SID>X("Cursor", s:baseback1, s:basecolor3, "")
 call <SID>X("CursorLineNr", s:basecolor1, s:baseback1, "none")
-call <SID>X("LineNr", s:basecolor2, s:baseback0, "")
+call <SID>X("LineNr", s:basecolor2, s:baseback1, "")
 call <SID>X("NonText", s:basecolor3, "", "none")
 call <SID>X("SpecialKey", s:basecolor3, "", "")
 call <SID>X("Search", s:baseback1, s:orange, "")

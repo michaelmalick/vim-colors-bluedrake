@@ -13,8 +13,8 @@ compared to another color, that is, each accent color has the same chroma and
 luminance values, just different hues. In addition, the accent colors are
 equally spaced on the color wheel, meaning adjacent colors have equal contrast.
 The 8 base colors all have the same hue as the blue accent color and are
-composed of two gradients; a six tone gradient with a low luminance and a two
-tone gradient with a medium luminance.
+composed of two gradients; a six tone gradient with a low chroma value and a two
+tone gradient with a medium chroma value.
 
 
 ![Color Palette](/screenshots/palette.jpg)
