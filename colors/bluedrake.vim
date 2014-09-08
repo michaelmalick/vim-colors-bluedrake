@@ -1,4 +1,4 @@
-" bluedrake.vim - a color palette for perfectionists
+" bluedrake.vim
 "
 " Designer: Michael Malick
 " Version:  0.08
@@ -46,18 +46,6 @@ if has("gui_running")
     endif
 
     " Multi-color palette (hue)
-
-    " C = 100 L = 55
-    " let s:blue    = "0096dd"
-    " let s:red     = "de5466"
-    " let s:orange  = "ba7700"
-    " let s:yellow  = "759000"
-    " let s:green   = "00a02f"
-    " let s:cyan    = "00a69c"
-    " let s:purple  = "9a68ed"
-    " let s:magenta = "df3ebf"
-
-    " C = 90 L = 55
     let s:blue    = "0094d4"
     let s:red     = "d75a69"
     let s:orange  = "b67800"
@@ -66,16 +54,6 @@ if has("gui_running")
     let s:cyan    = "00a39a"
     let s:purple  = "976ce2"
     let s:magenta = "d74bb9"
-
-    " C = 80 L = 55
-    " let s:blue    = "0092cc"
-    " let s:red     = "d0606d"
-    " let s:orange  = "b27900"
-    " let s:yellow  = "778e00"
-    " let s:green   = "009c47"
-    " let s:cyan    = "009f97"
-    " let s:purple  = "9570d8"
-    " let s:magenta = "ce55b3"
 
     function! <SID>X(group, fg, bg, attr)
         if a:fg != ""
