@@ -19,7 +19,7 @@ hue (same as the blue accent hue). This sequential palette makes it
 easy to switch between light and dark color themes while using the same accent
 color palette.
 
-
+ 
 ![Color Palette](/screenshots/palette.jpg)
 ![Light Theme](/screenshots/screen.jpg)
 
