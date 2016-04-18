@@ -211,6 +211,13 @@ call <SID>X("Define", s:purple, "", "none")
 call <SID>X("Include", s:red, "", "none")
 call <SID>X("Underlined", s:purple, s:baseback0, "underline")
 
+call <SID>X("htmlH1", s:red, "", "none")
+call <SID>X("htmlH2", s:orange, "", "none")
+call <SID>X("htmlH3", s:purple, "", "none")
+call <SID>X("htmlH4", s:cyan, "", "none")
+call <SID>X("htmlH5", s:yellow, "", "none")
+call <SID>X("htmlH6", s:magenta, "", "none")
+call <SID>X("mkdListItem", s:basecolor3, "", "none")
 
 " Terminal and GUI differences (no italics in mac terminal)
 if has("gui_running")
