@@ -282,8 +282,10 @@ call <SID>X("uniteInputCommand", s:green, "", "")
 
 
 "" Bibtex --------------------------------------------------
+"" http://ftp.vim.org/vim/runtime/syntax/bib.vim
 call <SID>X("bibType", s:violet, "", "")
 call <SID>X("bibEntryKw", s:blue, "", "")
 call <SID>X("bibKey", s:yellow, "", "")
 call <SID>X("bibVariable", s:blue, "", "")
+call <SID>X("bibNSEntryKw", s:blue, "", "")
 
