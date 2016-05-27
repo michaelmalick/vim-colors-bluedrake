@@ -238,6 +238,7 @@ call <SID>X("htmlH6", s:yellow, "", "none")
 " this is for the tpope markdown syntax
 call <SID>X("markdownOrderedListMarker", s:base0, "", "none")
 call <SID>X("markdownListMarker", s:base0, "", "none")
+call <SID>X("markdownRule", s:base0, "", "none")
 
 
 "" Pandoc --------------------------------------------------
