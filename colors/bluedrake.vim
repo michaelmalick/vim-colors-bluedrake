@@ -281,3 +281,9 @@ call <SID>X("uniteInputLine", s:base1, "", "") "input text
 call <SID>X("uniteInputCommand", s:green, "", "")
 
 
+"" Bibtex --------------------------------------------------
+call <SID>X("bibType", s:violet, "", "")
+call <SID>X("bibEntryKw", s:blue, "", "")
+call <SID>X("bibKey", s:yellow, "", "")
+call <SID>X("bibVariable", s:blue, "", "")
+
