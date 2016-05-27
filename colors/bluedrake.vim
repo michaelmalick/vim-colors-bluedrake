@@ -74,14 +74,14 @@ endif
 "" Terminal settings ---------------------------------------
 if !has("gui_running")
     if !exists("g:bluedrake_256")
-        let s:Tbase03  = "8"
-        let s:Tbase02  = "0"
-        let s:Tbase01  = "10"
-        let s:Tbase00  = "11"
-        let s:Tbase0   = "12"
-        let s:Tbase1   = "14"
-        let s:Tbase2   = "7"
-        let s:Tbase3   = "15"
+        let s:Gbase03  = "8"
+        let s:Gbase02  = "0"
+        let s:Gbase01  = "10"
+        let s:Gbase00  = "11"
+        let s:Gbase0   = "12"
+        let s:Gbase1   = "14"
+        let s:Gbase2   = "7"
+        let s:Gbase3   = "15"
         let s:yellow   = "3"
         let s:orange   = "9"
         let s:red      = "1"
@@ -93,14 +93,14 @@ if !has("gui_running")
     endif
 
     if exists("g:bluedrake_256")
-        let s:Tbase03  = "235"
-        let s:Tbase02  = "236"
-        let s:Tbase01  = "24"
-        let s:Tbase00  = "242"
-        let s:Tbase0   = "247"
-        let s:Tbase1   = "110"
-        let s:Tbase2   = "253"
-        let s:Tbase3   = "254"
+        let s:Gbase03  = "235"
+        let s:Gbase02  = "236"
+        let s:Gbase01  = "24"
+        let s:Gbase00  = "242"
+        let s:Gbase0   = "247"
+        let s:Gbase1   = "110"
+        let s:Gbase2   = "253"
+        let s:Gbase3   = "254"
         let s:yellow   = "100"
         let s:orange   = "136"
         let s:red      = "167"
@@ -112,25 +112,25 @@ if !has("gui_running")
     endif
 
     if &background=="dark"
-        let s:base03 = s:Tbase03
-        let s:base02 = s:Tbase02
-        let s:base01 = s:Tbase01
-        let s:base00 = s:Tbase00
-        let s:base0  = s:Tbase0
-        let s:base1  = s:Tbase1
-        let s:base2  = s:Tbase2
-        let s:base3  = s:Tbase3
+        let s:base03 = s:Gbase03
+        let s:base02 = s:Gbase02
+        let s:base01 = s:Gbase01
+        let s:base00 = s:Gbase00
+        let s:base0  = s:Gbase0
+        let s:base1  = s:Gbase1
+        let s:base2  = s:Gbase2
+        let s:base3  = s:Gbase3
     endif
 
     if &background=="light"
-        let s:base03 = s:Tbase3
-        let s:base02 = s:Tbase2
-        let s:base01 = s:Tbase1
-        let s:base00 = s:Tbase0
-        let s:base0  = s:Tbase00
-        let s:base1  = s:Tbase01
-        let s:base2  = s:Tbase02
-        let s:base3  = s:Tbase03
+        let s:base03 = s:Gbase3
+        let s:base02 = s:Gbase2
+        let s:base01 = s:Gbase1
+        let s:base00 = s:Gbase0
+        let s:base0  = s:Gbase00
+        let s:base1  = s:Gbase01
+        let s:base2  = s:Gbase02
+        let s:base3  = s:Gbase03
     endif
 
     function! <SID>X(group, fg, bg, attr)
@@ -168,8 +168,8 @@ call <SID>X("ModeMsg", s:green, "", "")
 call <SID>X("MoreMsg", s:green, "", "")
 call <SID>X("Question", s:green, "", "")
 call <SID>X("WarningMsg", s:red, "", "")
-call <SID>X("ErrorMsg", s:base2, s:red, "")
-call <SID>X("Error", s:base2, s:red, "")
+call <SID>X("ErrorMsg", s:Gbase3, s:red, "bold") " always use light fg
+call <SID>X("Error", s:Gbase3, s:red, "bold")    " always use light fg
 call <SID>X("MatchParen", s:magenta, s:base01, "bold")
 call <SID>X("FoldColumn", s:base01, s:base03, "")
 call <SID>X("vimCommand", s:violet, "", "none")
