@@ -225,14 +225,19 @@ else
 endif
 
 
-"" Markdown ------------------------------------------------
+"" HTML ----------------------------------------------------
 call <SID>X("htmlH1", s:orange, "", "none")
 call <SID>X("htmlH2", s:violet, "", "none")
 call <SID>X("htmlH3", s:green, "", "none")
 call <SID>X("htmlH4", s:magenta, "", "none")
 call <SID>X("htmlH5", s:cyan, "", "none")
 call <SID>X("htmlH6", s:yellow, "", "none")
-call <SID>X("mkdListItem", s:base0, "", "none")
+
+
+"" Markdown ------------------------------------------------
+" this is for the tpope markdown syntax
+call <SID>X("markdownOrderedListMarker", s:base0, "", "none")
+call <SID>X("markdownListMarker", s:base0, "", "none")
 
 
 "" Pandoc --------------------------------------------------
