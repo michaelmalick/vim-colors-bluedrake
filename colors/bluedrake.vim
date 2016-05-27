@@ -15,9 +15,9 @@ let g:colors_name = "bluedrake"
 
 
 "" GUI settings --------------------------------------------
-if has("gui_running") 
+if has("gui_running")
     let s:Gbase03 = "002d49"
-    let s:Gbase02 = "003951" 
+    let s:Gbase02 = "003951"
     let s:Gbase01 = "2f5468"
     let s:Gbase00 = "577284"
     let s:Gbase0  = "8ea2b0"
@@ -59,13 +59,13 @@ if has("gui_running")
 
     function! <SID>X(group, fg, bg, attr)
         if a:fg != ""
-            exec "hi " . a:group . " guifg=#" . a:fg 
+            exec "hi " . a:group . " guifg=#" . a:fg
         endif
         if a:bg != ""
             exec "hi " . a:group . " guibg=#" . a:bg
         endif
         if a:attr != ""
-            exec "hi " . a:group . " gui=" . a:attr 
+            exec "hi " . a:group . " gui=" . a:attr
         endif
     endfunction
 endif
@@ -163,7 +163,7 @@ call <SID>X("StatusLine", s:base02, s:base0, "reverse")
 call <SID>X("StatusLineNC", s:base02, s:base01, "reverse")
 call <SID>X("VertSplit", s:base02, s:base02, "none")
 call <SID>X("Visual", s:base03, s:base0, "")
-call <SID>X("Directory", s:violet, "", "")  
+call <SID>X("Directory", s:violet, "", "")
 call <SID>X("ModeMsg", s:green, "", "")
 call <SID>X("MoreMsg", s:green, "", "")
 call <SID>X("Question", s:green, "", "")
@@ -211,7 +211,7 @@ call <SID>X("Operator", s:cyan, "", "none")
 call <SID>X("Type", s:orange, "", "none")
 call <SID>X("Define", s:violet, "", "none")
 call <SID>X("Include", s:red, "", "none")
-call <SID>X("Underlined", s:violet, s:base03, "underline")
+call <SID>X("Underlined", s:blue, "", "underline")
 call <SID>X("Delimiter", s:base00, "", "none")
 
 " Terminal and GUI differences (no italics in mac terminal)
