@@ -212,6 +212,7 @@ call <SID>X("Type", s:orange, "", "none")
 call <SID>X("Define", s:violet, "", "none")
 call <SID>X("Include", s:red, "", "none")
 call <SID>X("Underlined", s:violet, s:base03, "underline")
+call <SID>X("Delimiter", s:base00, "", "none")
 
 " Terminal and GUI differences (no italics in mac terminal)
 if has("gui_running")
