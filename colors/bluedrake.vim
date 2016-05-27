@@ -252,3 +252,25 @@ call <SID>X("pandocDelimitedCodeBlockStart", s:base0, "", "")
 call <SID>X("pandocDelimitedCodeBlockEnd", s:base0, "", "")
 call <SID>X("pandocReferenceLabel", s:violet, "", "") " wrapped citations
 call <SID>X("pandocReferenceURL", s:red, "", "")
+
+
+"" Unite ---------------------------------------------------
+call <SID>X("uniteMarkedLine", s:magenta, "", "bold")
+call <SID>X("uniteMarkedIcon", s:magenta, "", "")
+call <SID>X("uniteCandidateSourceName", s:red, "", "")
+call <SID>X("uniteQuickMatchText", s:red, "", "")
+call <SID>X("uniteCandidateIcon", s:red, "", "")
+call <SID>X("uniteCandidateInputKeyword", s:yellow, "", "") " matched text
+
+call <SID>X("uniteStatusNormal", s:base0, s:base02, "")
+call <SID>X("uniteStatusHead", s:base0, s:base02, "")
+call <SID>X("uniteStatusSourceNames", s:base00, s:base02, "")
+call <SID>X("uniteStatusSourceCandidates", s:base1, s:base02, "")
+call <SID>X("uniteStatusMessage", s:violet, s:base02, "")
+call <SID>X("uniteStatusLineNR", s:base0, s:base02, "")
+
+call <SID>X("uniteInputPrompt", s:red, "", "")
+call <SID>X("uniteInputLine", s:base1, "", "") "input text
+call <SID>X("uniteInputCommand", s:green, "", "")
+
+
