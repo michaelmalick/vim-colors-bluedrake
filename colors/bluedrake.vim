@@ -226,12 +226,12 @@ endif
 
 
 "" HTML ----------------------------------------------------
-call <SID>X("htmlH1", s:orange, "", "none")
-call <SID>X("htmlH2", s:violet, "", "none")
-call <SID>X("htmlH3", s:green, "", "none")
-call <SID>X("htmlH4", s:magenta, "", "none")
-call <SID>X("htmlH5", s:cyan, "", "none")
-call <SID>X("htmlH6", s:yellow, "", "none")
+call <SID>X("htmlH1", s:orange, "", "bold")
+call <SID>X("htmlH2", s:violet, "", "bold")
+call <SID>X("htmlH3", s:green, "", "bold")
+call <SID>X("htmlH4", s:magenta, "", "bold")
+call <SID>X("htmlH5", s:cyan, "", "bold")
+call <SID>X("htmlH6", s:yellow, "", "bold")
 
 
 "" Markdown ------------------------------------------------
