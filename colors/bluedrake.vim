@@ -194,7 +194,8 @@ endif
 
 
 "" Standard highlighting -----------------------------------
-call <SID>X("Todo", s:base0, s:base03, "none")
+" call <SID>X("Todo", s:base0, s:base03, "none")
+call <SID>X("Todo", s:base0, "none", "bold")
 call <SID>X("Done", s:base00, "", "none")
 call <SID>X("Closed", s:base00, "", "none")
 call <SID>X("Title", s:orange, "", "none")
@@ -239,6 +240,7 @@ call <SID>X("htmlH6", s:yellow, "", "bold")
 call <SID>X("markdownOrderedListMarker", s:base0, "", "none")
 call <SID>X("markdownListMarker", s:base0, "", "none")
 call <SID>X("markdownRule", s:base0, "", "none")
+call <SID>X("markdownUrl", s:yellow, "", "underline")
 
 
 "" Pandoc --------------------------------------------------
