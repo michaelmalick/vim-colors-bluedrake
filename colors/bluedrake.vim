@@ -197,7 +197,7 @@ endif
 
 "" Standard highlighting -----------------------------------
 " call <SID>X("Todo", s:base0, s:base03, "none")
-call <SID>X("Todo", s:base0, "none", "bold")
+call <SID>X("Todo", s:base0, s:base03, "bold")
 call <SID>X("Done", s:base00, "", "none")
 call <SID>X("Closed", s:base00, "", "none")
 call <SID>X("Title", s:orange, "", "none")
