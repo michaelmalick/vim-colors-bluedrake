@@ -159,7 +159,7 @@ call <SID>X("IncSearch", s:yellow, s:base03, "")
 call <SID>X("TabLine", s:base02, s:base1, "none")
 call <SID>X("TabLineSel", s:base1, s:base03, "")
 call <SID>X("TabLineFill", s:base1, s:blue, "reverse")
-call <SID>X("StatusLine", s:base02, s:base0, "reverse")
+call <SID>X("StatusLine", s:base02, s:base1, "reverse")
 call <SID>X("StatusLineNC", s:base02, s:base01, "reverse")
 " call <SID>X("StatusLine", s:base01, s:base1, "reverse")
 " call <SID>X("StatusLineNC", s:base01, s:base00, "reverse")
@@ -224,7 +224,7 @@ if has("gui_running")
 else
     call <SID>X("String", s:green, "", "")
     call <SID>X("Comment", s:base00, "", "")
-    call <SID>X("SpellBad", s:red, s:base03, "")
+    call <SID>X("SpellBad", s:red, s:base03, "underline")
 endif
 
 
