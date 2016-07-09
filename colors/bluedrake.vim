@@ -293,3 +293,14 @@ call <SID>X("bibKey", s:yellow, "", "")
 call <SID>X("bibVariable", s:blue, "", "")
 call <SID>X("bibNSEntryKw", s:blue, "", "")
 
+
+"" BufExplorer ---------------------------------------------
+call <SID>X("bufExplorerActBuf", s:blue, "", "")
+call <SID>X("bufExplorerAltBuf", s:blue, "", "")
+call <SID>X("bufExplorerCurBuf", s:yellow, "", "")
+call <SID>X("bufExplorerHidBuf", s:blue, "", "")
+call <SID>X("bufExplorerLockedBuf", s:blue, "", "")
+call <SID>X("bufExplorerModBuf", s:blue, "", "")
+call <SID>X("bufExplorerUnlBuf", s:base00, "", "")
+call <SID>X("bufExplorerInactBuf", s:base00, "", "")
+
