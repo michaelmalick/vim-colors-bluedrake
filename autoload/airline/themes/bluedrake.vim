@@ -62,7 +62,7 @@ let s:N2 = [s:base1, s:base01, '']
 let s:N3 = [s:base1, s:base02, '']
 let s:NF = [s:orange, s:N3[1], '']
 let s:NW = [s:base3, s:orange, '']
-let s:NM = [s:base0, s:N3[1], '']
+let s:NM = [s:base1, s:N3[1], '']
 let s:NMi = [s:base2, s:N3[1], '']
 
 " Insert mode
@@ -121,7 +121,7 @@ let s:IA = [s:base01, s:base02, '']
 
   let g:airline#themes#bluedrake#palette.normal_modified = {
         \ 'airline_c': [s:NM[0].g, s:NM[1].g,
-        \ s:NF[0].t, s:NM[1].t, s:NM[2]]}
+        \ s:NM[0].t, s:NM[1].t, s:NM[2]]}
 
   let g:airline#themes#bluedrake#palette.normal_modified.airline_warning =
         \ g:airline#themes#bluedrake#palette.normal.airline_warning
@@ -136,7 +136,7 @@ let s:IA = [s:base01, s:base02, '']
 
   let g:airline#themes#bluedrake#palette.insert_modified = {
         \ 'airline_c': [s:IM[0].g, s:IM[1].g,
-        \ s:IF[0].t, s:IM[1].t, s:IM[2]]}
+        \ s:IM[0].t, s:IM[1].t, s:IM[2]]}
 
   let g:airline#themes#bluedrake#palette.insert_modified.airline_warning =
         \ g:airline#themes#bluedrake#palette.normal.airline_warning
@@ -151,7 +151,7 @@ let s:IA = [s:base01, s:base02, '']
 
   let g:airline#themes#bluedrake#palette.visual_modified = {
         \ 'airline_c': [s:VM[0].g, s:VM[1].g,
-        \ s:VF[0].t, s:VM[1].t, s:VM[2]]}
+        \ s:VM[0].t, s:VM[1].t, s:VM[2]]}
 
   let g:airline#themes#bluedrake#palette.visual_modified.airline_warning =
         \ g:airline#themes#bluedrake#palette.normal.airline_warning
@@ -166,7 +166,7 @@ let s:IA = [s:base01, s:base02, '']
 
   let g:airline#themes#bluedrake#palette.replace_modified = {
         \ 'airline_c': [s:RM[0].g, s:RM[1].g,
-        \ s:RF[0].t, s:RM[1].t, s:RM[2]]}
+        \ s:RM[0].t, s:RM[1].t, s:RM[2]]}
 
   let g:airline#themes#bluedrake#palette.replace_modified.airline_warning =
         \ g:airline#themes#bluedrake#palette.normal.airline_warning
