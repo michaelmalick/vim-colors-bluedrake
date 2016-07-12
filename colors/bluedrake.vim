@@ -323,3 +323,9 @@ call <SID>X("gitEmailDelimiter", s:base00, "", "")
 call <SID>X("gitDate", s:blue, "", "")
 call <SID>X("gitDateHeader", s:blue, "", "")
 call <SID>X("gitHash", s:cyan, "", "")
+
+
+"" Extra StatusLine colors ---------------------------------
+call <SID>X("StatusLineBold", s:base1, s:base02, "bold")
+call <SID>X("StatusLineRed", s:red, s:base02, "")
+call <SID>X("StatusLineOrange", s:orange, s:base02, "")
