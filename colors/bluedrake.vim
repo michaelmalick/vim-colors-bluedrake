@@ -237,6 +237,11 @@ call <SID>X("htmlH3", s:green, "", "bold")
 call <SID>X("htmlH4", s:magenta, "", "bold")
 call <SID>X("htmlH5", s:cyan, "", "bold")
 call <SID>X("htmlH6", s:yellow, "", "bold")
+if has("gui_running")
+    call <SID>X("htmlItalic", "", "", "italic")
+else
+    call <SID>X("htmlItalic", "", "", "underline")
+endif
 
 
 "" Markdown ------------------------------------------------
