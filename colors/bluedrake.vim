@@ -181,7 +181,7 @@ call <SID>X("DiffChange", s:blue, s:base02, "reverse")
 " call <SID>X("DiffChange", s:blue, s:base02, "reverse")
 call <SID>X("DiffAdd", s:green, s:base02, "reverse")
 call <SID>X("DiffDelete", s:red, s:base02, "reverse")
-call <SID>X("WildMenu", s:base02, s:blue, "reverse")
+call <SID>X("WildMenu", s:blue, s:base02, "reverse")
 if version >= 700
     call <SID>X("CursorLine", "", s:base02, "none")
     call <SID>X("CursorColumn", "", s:base01, "none")
