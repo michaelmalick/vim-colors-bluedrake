@@ -250,7 +250,7 @@ call <SID>X("markdownOrderedListMarker", s:base0, "", "none")
 call <SID>X("markdownListMarker", s:base0, "", "none")
 call <SID>X("markdownRule", s:base0, "", "none")
 call <SID>X("markdownUrl", s:yellow, "", "underline")
-call <SID>X("markdownCode", s:green, "", "italic")
+call <SID>X("markdownCode", s:green, "", "none")
 
 
 "" Pandoc --------------------------------------------------
