@@ -227,6 +227,9 @@ else
     call <SID>X("String", s:green, "", "")
     call <SID>X("Comment", s:base00, "", "")
     call <SID>X("SpellBad", s:red, s:base03, "underline")
+    call <SID>X("SpellLocal", s:cyan, s:base03, "underline")
+    call <SID>X("SpellRare", s:cyan, s:base03, "underline")
+    call <SID>X("SpellCap", s:magenta, s:base03, "underline")
 endif
 
 
