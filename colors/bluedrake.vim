@@ -297,7 +297,7 @@ call <SID>X("uniteInputCommand", s:green, "", "")
 
 
 "" Bibtex --------------------------------------------------
-"" http://ftp.vim.org/vim/runtime/syntax/bib.vim
+"" :$VIMRUNTIME/syntax/bib.vim
 call <SID>X("bibType", s:violet, "", "")
 call <SID>X("bibEntryKw", s:blue, "", "")
 call <SID>X("bibKey", s:yellow, "", "")
@@ -332,6 +332,14 @@ call <SID>X("gitEmailDelimiter", s:base00, "", "")
 call <SID>X("gitDate", s:blue, "", "")
 call <SID>X("gitDateHeader", s:blue, "", "")
 call <SID>X("gitHash", s:cyan, "", "")
+
+
+"" Make ----------------------------------------------------
+"" :$VIMRUNTIME/syntax/make.vim
+call <SID>X("makeIdent", s:violet, "", "")
+call <SID>X("makeTarget", s:orange, "", "")
+call <SID>X("makeInclude", s:blue, "", "")
+call <SID>X("makeCommands", s:blue, "", "")
 
 
 "" Extra StatusLine colors ---------------------------------
