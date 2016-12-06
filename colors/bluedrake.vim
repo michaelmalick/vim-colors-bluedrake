@@ -289,11 +289,11 @@ call <SID>X("pandocAtxStart", s:orange, "", "")
 call <SID>X("pandocListItemBullet", s:base0, "", "")
 call <SID>X("pandocUListItemBullet", s:base0, "", "")
 call <SID>X("pandocListItemBulletId", s:base0, "", "")
-call <SID>X("pandocPCite", s:violet, "", "")
-call <SID>X("pandocICite", s:violet, "", "")
-call <SID>X("pandocCiteAnchor", s:violet, "", "")
-call <SID>X("pandocCiteKey", s:violet, "", "")
-call <SID>X("pandocCiteLocator", s:cyan, "", "")
+call <SID>X("pandocPCite", s:cyan, "", "")
+call <SID>X("pandocICite", s:cyan, "", "")
+call <SID>X("pandocCiteAnchor", s:cyan, "", "")
+call <SID>X("pandocCiteKey", s:cyan, "", "")
+call <SID>X("pandocCiteLocator", s:violet, "", "")
 call <SID>X("pandocDelimitedCodeBlockLanguage", s:base0, "", "")
 call <SID>X("pandocDelimitedCodeBlockStart", s:base0, "", "")
 call <SID>X("pandocDelimitedCodeBlockEnd", s:base0, "", "")
@@ -378,4 +378,10 @@ call <SID>X("StatusLineOrange", s:orange, s:base02, "")
 
 "" vim -----------------------------------------------------
 call <SID>X("vimCommand", s:blue, "", "none")
+
+
+"" tex -----------------------------------------------------
+call <SID>X("texCite", s:cyan, "", "none")
+call <SID>X("texRefZone", s:violet, "", "none")
+
  
