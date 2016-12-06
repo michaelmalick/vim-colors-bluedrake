@@ -14,6 +14,7 @@ let g:colors_name = "bluedrake"
 " let g:bluedrake_256 = 1
 
 
+
 "" GUI settings --------------------------------------------
 if has("gui_running")
     let s:Gbase03 = "002d49"
@@ -69,6 +70,7 @@ if has("gui_running")
         endif
     endfunction
 endif
+
 
 
 "" Terminal settings ---------------------------------------
@@ -147,7 +149,56 @@ if !has("gui_running")
 endif
 
 
-"" Vim highlighting ----------------------------------------
+
+"" Standard highlighting -----------------------------------
+"" see :h syntax
+
+" *Comment
+if has("gui_running")
+    call <SID>X("Comment", s:base00, "", "italic")
+else
+    call <SID>X("Comment", s:base00, "", "")
+endif
+
+" *Constant (String, Character, Number, Boolean, Float)
+call <SID>X("Constant", s:cyan, "", "none")
+if has("gui_running")
+    call <SID>X("String", s:cyan, "", "italic")
+else
+    call <SID>X("String", s:cyan, "", "")
+endif
+
+" *Identifier (Function)
+call <SID>X("Identifier", s:violet, "", "none")
+
+" *Statement (Conditional, Repeat, Label, Operator, Keyword, Exception)
+call <SID>X("Statement", s:yellow, "", "none")
+
+" *PreProc (Include, Define, Macro, PreCondit)
+call <SID>X("PreProc", s:orange, "", "none")
+
+" *Type (StorageClass Structure, Typedef)
+call <SID>X("Type", s:green, "", "none")
+
+" *Special (SpecialChar, Tag, Delimiter, SpecialComment, Debug)
+call <SID>X("Special", s:magenta, "", "none")
+call <SID>X("Delimiter", s:blue, "", "none")
+
+" *Underline
+call <SID>X("Underlined", s:blue, "", "underline")
+
+" *Ignore
+call <SID>X("Ignore", s:blue, "", "none")
+
+" *Error
+call <SID>X("Error", s:base03, s:red, "bold")
+
+" *Todo
+call <SID>X("Todo", s:base0, s:base03, "bold")
+
+
+
+"" Default highlighting ------------------------------------
 call <SID>X("Normal", s:blue, s:base03, "")
 call <SID>X("Cursor", s:base03, s:base0, "")
 call <SID>X("CursorLineNr", s:base1, s:base02, "none")
@@ -161,28 +212,22 @@ call <SID>X("TabLineSel", s:base1, s:base03, "")
 call <SID>X("TabLineFill", s:base02, s:blue, "reverse")
 call <SID>X("StatusLine", s:base02, s:base1, "reverse")
 call <SID>X("StatusLineNC", s:base02, s:base01, "reverse")
-" call <SID>X("StatusLine", s:base01, s:base1, "reverse")
-" call <SID>X("StatusLineNC", s:base01, s:base00, "reverse")
 call <SID>X("VertSplit", s:base01, s:base03, "none")
-" call <SID>X("VertSplit", s:base02, s:base02, "none")
 call <SID>X("Visual", s:base03, s:base0, "")
 call <SID>X("Directory", s:violet, "", "")
 call <SID>X("ModeMsg", s:green, "", "")
 call <SID>X("MoreMsg", s:green, "", "")
 call <SID>X("Question", s:green, "", "")
 call <SID>X("WarningMsg", s:red, "", "")
-call <SID>X("ErrorMsg", s:Gbase3, s:red, "bold") " always use light fg
-call <SID>X("Error", s:Gbase3, s:red, "bold")    " always use light fg
+call <SID>X("ErrorMsg", s:base03, s:red, "bold")
 call <SID>X("MatchParen", s:magenta, s:base01, "bold")
 call <SID>X("FoldColumn", s:base01, s:base03, "")
-call <SID>X("vimCommand", s:blue, "", "none")
-call <SID>X("DiffText", s:violet, s:base02, "reverse")
+call <SID>X("DiffText", s:blue, s:base3, "reverse")
 call <SID>X("DiffChange", s:blue, s:base02, "reverse")
-" call <SID>X("DiffText", s:magenta, s:base02, "reverse")
-" call <SID>X("DiffChange", s:blue, s:base02, "reverse")
 call <SID>X("DiffAdd", s:green, s:base02, "reverse")
 call <SID>X("DiffDelete", s:red, s:base02, "reverse")
 call <SID>X("WildMenu", s:blue, s:base02, "reverse")
+
 if version >= 700
     call <SID>X("CursorLine", "", s:base02, "none")
     call <SID>X("CursorColumn", "", s:base01, "none")
@@ -192,50 +237,23 @@ if version >= 700
     call <SID>X("PMenuThumb", s:base00, s:base01, "")
     call <SID>X("SignColumn", s:base01, s:base03, "")
 endif
+
 if version >= 703
     call <SID>X("ColorColumn", "", s:base02, "none")
     call <SID>X("Conceal", s:blue, s:base03, "")
 endif
 
-
-"" Standard highlighting -----------------------------------
-" call <SID>X("Todo", s:base0, s:base03, "none")
-call <SID>X("Todo", s:base0, s:base03, "bold")
-call <SID>X("Done", s:base00, "", "none")
-call <SID>X("Closed", s:base00, "", "none")
-call <SID>X("Title", s:orange, "", "none")
-call <SID>X("Identifier", s:magenta, "", "none")
-call <SID>X("Statement", s:yellow, "", "none")
-call <SID>X("Conditional", s:blue, "", "none")
-call <SID>X("Repeat", s:magenta, "", "none")
-call <SID>X("Structure", s:cyan, "", "none")
-call <SID>X("Function", s:violet, "", "none")
-call <SID>X("Constant", s:red, "", "none")
-call <SID>X("Special", s:cyan, "", "none")
-call <SID>X("PreProc", s:violet, "", "none")
-call <SID>X("Operator", s:cyan, "", "none")
-call <SID>X("Type", s:orange, "", "none")
-call <SID>X("Define", s:blue, "", "none")
-call <SID>X("Include", s:red, "", "none")
-call <SID>X("Underlined", s:blue, "", "underline")
-call <SID>X("Delimiter", s:base00, "", "none")
-
-call <SID>X("Boolean", s:magenta, "", "none")
-call <SID>X("Number", s:blue, "", "none")
-call <SID>X("SpecialChar", s:yellow, "", "none")
-
-" Terminal and GUI differences (no italics in mac terminal)
-if has("gui_running")
-    call <SID>X("String", s:green, "", "italic")
-    call <SID>X("Comment", s:base00, "", "italic")
-else
-    call <SID>X("String", s:green, "", "")
-    call <SID>X("Comment", s:base00, "", "")
+if !has("gui_running")
     call <SID>X("SpellBad", s:red, s:base03, "underline")
     call <SID>X("SpellLocal", s:cyan, s:base03, "underline")
     call <SID>X("SpellRare", s:cyan, s:base03, "underline")
     call <SID>X("SpellCap", s:magenta, s:base03, "underline")
 endif
+
+call <SID>X("Done", s:base00, "", "none")
+call <SID>X("Closed", s:base00, "", "none")
+call <SID>X("Title", s:orange, "", "none")
+
 
 
 "" HTML ----------------------------------------------------
@@ -252,13 +270,15 @@ else
 endif
 
 
+
 "" Markdown ------------------------------------------------
 " this is for the tpope markdown syntax
 call <SID>X("markdownOrderedListMarker", s:base0, "", "none")
 call <SID>X("markdownListMarker", s:base0, "", "none")
-call <SID>X("markdownRule", s:base0, "", "none")
+call <SID>X("markdownRule", s:base00, "", "none")
 call <SID>X("markdownUrl", s:yellow, "", "underline")
-call <SID>X("markdownCode", s:green, "", "none")
+call <SID>X("markdownCode", s:cyan, "", "none")
+
 
 
 "" Pandoc --------------------------------------------------
@@ -281,6 +301,7 @@ call <SID>X("pandocReferenceLabel", s:violet, "", "") " wrapped citations
 call <SID>X("pandocReferenceURL", s:red, "", "")
 
 
+
 "" Unite ---------------------------------------------------
 call <SID>X("uniteMarkedLine", s:magenta, "", "bold")
 call <SID>X("uniteMarkedIcon", s:magenta, "", "")
@@ -288,17 +309,16 @@ call <SID>X("uniteCandidateSourceName", s:red, "", "")
 call <SID>X("uniteQuickMatchText", s:red, "", "")
 call <SID>X("uniteCandidateIcon", s:red, "", "")
 call <SID>X("uniteCandidateInputKeyword", s:yellow, "", "") " matched text
-
 call <SID>X("uniteStatusNormal", s:base0, s:base02, "")
 call <SID>X("uniteStatusHead", s:base0, s:base02, "")
 call <SID>X("uniteStatusSourceNames", s:base00, s:base02, "")
 call <SID>X("uniteStatusSourceCandidates", s:base1, s:base02, "")
 call <SID>X("uniteStatusMessage", s:violet, s:base02, "")
 call <SID>X("uniteStatusLineNR", s:base0, s:base02, "")
-
 call <SID>X("uniteInputPrompt", s:red, "", "")
 call <SID>X("uniteInputLine", s:base1, "", "") "input text
 call <SID>X("uniteInputCommand", s:green, "", "")
+
 
 
 "" Bibtex --------------------------------------------------
@@ -310,6 +330,7 @@ call <SID>X("bibVariable", s:blue, "", "")
 call <SID>X("bibNSEntryKw", s:blue, "", "")
 
 
+
 "" BufExplorer ---------------------------------------------
 call <SID>X("bufExplorerActBuf", s:blue, "", "")
 call <SID>X("bufExplorerAltBuf", s:blue, "", "")
@@ -319,6 +340,7 @@ call <SID>X("bufExplorerLockedBuf", s:blue, "", "")
 call <SID>X("bufExplorerModBuf", s:blue, "", "")
 call <SID>X("bufExplorerUnlBuf", s:base00, "", "")
 call <SID>X("bufExplorerInactBuf", s:base00, "", "")
+
 
 
 "" Git -----------------------------------------------------
@@ -339,15 +361,21 @@ call <SID>X("gitDateHeader", s:blue, "", "")
 call <SID>X("gitHash", s:cyan, "", "")
 
 
+
 "" Make ----------------------------------------------------
 "" :$VIMRUNTIME/syntax/make.vim
-call <SID>X("makeIdent", s:violet, "", "")
 call <SID>X("makeTarget", s:orange, "", "")
 call <SID>X("makeInclude", s:blue, "", "")
-call <SID>X("makeCommands", s:blue, "", "")
+
 
 
 "" Extra StatusLine colors ---------------------------------
 call <SID>X("StatusLineBold", s:base1, s:base02, "bold")
 call <SID>X("StatusLineRed", s:red, s:base02, "")
 call <SID>X("StatusLineOrange", s:orange, s:base02, "")
+
+
+
+"" vim -----------------------------------------------------
+call <SID>X("vimCommand", s:blue, "", "none")
+ 
