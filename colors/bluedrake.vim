@@ -182,7 +182,7 @@ call <SID>X("Type", s:green, "", "none")
 
 " *Special (SpecialChar, Tag, Delimiter, SpecialComment, Debug)
 call <SID>X("Special", s:magenta, "", "none")
-call <SID>X("Delimiter", s:blue, "", "none")
+call <SID>X("Delimiter", s:base00, "", "none")
 
 " *Underline
 call <SID>X("Underlined", s:blue, "", "underline")
@@ -273,6 +273,7 @@ endif
 
 "" Markdown ------------------------------------------------
 " this is for the tpope markdown syntax
+call <SID>X("markdownHeadingDelimiter", s:base00, "", "none")
 call <SID>X("markdownOrderedListMarker", s:base0, "", "none")
 call <SID>X("markdownListMarker", s:base0, "", "none")
 call <SID>X("markdownRule", s:base00, "", "none")
