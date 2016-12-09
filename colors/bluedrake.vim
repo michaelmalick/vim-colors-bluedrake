@@ -1,7 +1,10 @@
-" bluedrake.vim
-"
-" Designer: Michael Malick
-" Version:  0.10
+"" bluedrake.vim
+""
+"" Designer: Michael Malick
+"" Version:  0.10
+""
+"" For details of highlight groups see :h syntax
+"" To inspect filetype syntax files use :e $VIMRUNTIME/syntax/html.vim
 
 
 hi clear
@@ -12,7 +15,6 @@ endif
 
 let g:colors_name = "bluedrake"
 " let g:bluedrake_256 = 1
-
 
 
 "" GUI settings --------------------------------------------
@@ -48,7 +50,6 @@ if has("gui_running")
         let s:base3  = s:Gbase03
     endif
 
-    " Multi-color palette (hue)
     let s:yellow  = "768f00"
     let s:orange  = "b67800"
     let s:red     = "d75a69"
@@ -70,7 +71,6 @@ if has("gui_running")
         endif
     endfunction
 endif
-
 
 
 "" Terminal settings ---------------------------------------
@@ -149,9 +149,7 @@ if !has("gui_running")
 endif
 
 
-
 "" Standard highlighting -----------------------------------
-"" see :h syntax
 
 " *Comment
 if has("gui_running")
@@ -197,63 +195,67 @@ call <SID>X("Error", s:base03, s:red, "bold")
 call <SID>X("Todo", s:base0, s:base03, "bold")
 
 
-
 "" Default highlighting ------------------------------------
-call <SID>X("Normal", s:blue, s:base03, "")
 call <SID>X("Cursor", s:base03, s:base0, "")
-call <SID>X("CursorLineNr", s:base1, s:base02, "none")
-call <SID>X("LineNr", s:base00, s:base02, "")
-call <SID>X("NonText", s:base0, "", "none")
-call <SID>X("SpecialKey", s:base0, "", "")
-call <SID>X("Search", s:base03, s:yellow, "")
-call <SID>X("IncSearch", s:yellow, s:base03, "")
-call <SID>X("TabLine", s:base00, s:base02, "none")
-call <SID>X("TabLineSel", s:base1, s:base03, "")
-call <SID>X("TabLineFill", s:base02, s:blue, "reverse")
-call <SID>X("StatusLine", s:base02, s:base1, "reverse")
-call <SID>X("StatusLineNC", s:base02, s:base01, "reverse")
-call <SID>X("VertSplit", s:base01, s:base03, "none")
-call <SID>X("Visual", s:base03, s:base0, "")
+call <SID>X("CursorIM", s:base03, s:base0, "")
 call <SID>X("Directory", s:violet, "", "")
+call <SID>X("DiffAdd", s:green, s:base02, "reverse")
+call <SID>X("DiffChange", s:blue, s:base02, "reverse")
+call <SID>X("DiffDelete", s:red, s:base02, "reverse")
+call <SID>X("DiffText", s:blue, s:base3, "reverse")
+call <SID>X("ErrorMsg", s:base03, s:red, "bold")
+call <SID>X("VertSplit", s:base01, s:base03, "none")
+call <SID>X("Folded", s:base0, s:base03, "")
+call <SID>X("FoldColumn", s:base01, s:base03, "")
+call <SID>X("SignColumn", s:base01, s:base03, "")
+call <SID>X("IncSearch", s:yellow, s:base03, "")
+call <SID>X("LineNr", s:base00, s:base02, "")
 call <SID>X("ModeMsg", s:green, "", "")
 call <SID>X("MoreMsg", s:green, "", "")
+call <SID>X("NonText", s:base0, "", "none")
+call <SID>X("Normal", s:blue, s:base03, "")
 call <SID>X("Question", s:green, "", "")
+call <SID>X("Search", s:base03, s:yellow, "")
+call <SID>X("SpecialKey", s:base0, "", "")
+call <SID>X("StatusLine", s:base02, s:base1, "reverse")
+call <SID>X("StatusLineNC", s:base02, s:base01, "reverse")
+call <SID>X("Title", s:orange, "", "none")
+call <SID>X("Visual", s:base03, s:base0, "")
+call <SID>X("VisualNOS", s:base03, s:base0, "")
 call <SID>X("WarningMsg", s:red, "", "")
-call <SID>X("ErrorMsg", s:base03, s:red, "bold")
-call <SID>X("MatchParen", s:magenta, s:base01, "bold")
-call <SID>X("FoldColumn", s:base01, s:base03, "")
-call <SID>X("DiffText", s:blue, s:base3, "reverse")
-call <SID>X("DiffChange", s:blue, s:base02, "reverse")
-call <SID>X("DiffAdd", s:green, s:base02, "reverse")
-call <SID>X("DiffDelete", s:red, s:base02, "reverse")
 call <SID>X("WildMenu", s:blue, s:base02, "reverse")
 
-if version >= 700
-    call <SID>X("CursorLine", "", s:base02, "none")
+if version >= 701
     call <SID>X("CursorColumn", "", s:base01, "none")
-    call <SID>X("Folded", s:base0, s:base03, "")
+    call <SID>X("CursorLine", "", s:base02, "none")
+    call <SID>X("MatchParen", s:magenta, s:base01, "bold")
     call <SID>X("PMenu", s:base0, s:base02, "none")
     call <SID>X("PMenuSel", s:base02, s:blue, "")
+    call <SID>X("PMenuSbar", s:base00, s:base01, "")
     call <SID>X("PMenuThumb", s:base00, s:base01, "")
-    call <SID>X("SignColumn", s:base01, s:base03, "")
+    call <SID>X("TabLine", s:base00, s:base02, "none")
+    call <SID>X("TabLineFill", s:base02, s:blue, "reverse")
+    call <SID>X("TabLineSel", s:base1, s:base03, "")
+    if !has("gui_running")
+        call <SID>X("SpellBad", s:red, s:base03, "underline")
+        call <SID>X("SpellCap", s:magenta, s:base03, "underline")
+        call <SID>X("SpellLocal", s:cyan, s:base03, "underline")
+        call <SID>X("SpellRare", s:cyan, s:base03, "underline")
+    endif
 endif
 
 if version >= 703
-    call <SID>X("ColorColumn", "", s:base02, "none")
     call <SID>X("Conceal", s:blue, s:base03, "")
+    call <SID>X("ColorColumn", "", s:base02, "none")
+endif
+    
+if version >= 704
+    call <SID>X("CursorLineNr", s:base1, s:base02, "none")
 endif
 
-if !has("gui_running")
-    call <SID>X("SpellBad", s:red, s:base03, "underline")
-    call <SID>X("SpellLocal", s:cyan, s:base03, "underline")
-    call <SID>X("SpellRare", s:cyan, s:base03, "underline")
-    call <SID>X("SpellCap", s:magenta, s:base03, "underline")
+if version >= 800
+    call <SID>X("EndOfBuffer", s:base00, s:base03, "none")
 endif
-
-call <SID>X("Done", s:base00, "", "none")
-call <SID>X("Closed", s:base00, "", "none")
-call <SID>X("Title", s:orange, "", "none")
-
 
 
 "" HTML ----------------------------------------------------
@@ -270,16 +272,13 @@ else
 endif
 
 
-
-"" Markdown ------------------------------------------------
-" this is for the tpope markdown syntax
+"" Markdown (tpope) ----------------------------------------
 call <SID>X("markdownHeadingDelimiter", s:base00, "", "none")
 call <SID>X("markdownOrderedListMarker", s:base0, "", "none")
 call <SID>X("markdownListMarker", s:base0, "", "none")
 call <SID>X("markdownRule", s:base00, "", "none")
 call <SID>X("markdownUrl", s:yellow, "", "underline")
 call <SID>X("markdownCode", s:cyan, "", "none")
-
 
 
 "" Pandoc --------------------------------------------------
@@ -302,7 +301,6 @@ call <SID>X("pandocReferenceLabel", s:violet, "", "") " wrapped citations
 call <SID>X("pandocReferenceURL", s:red, "", "")
 
 
-
 "" Unite ---------------------------------------------------
 call <SID>X("uniteMarkedLine", s:magenta, "", "bold")
 call <SID>X("uniteMarkedIcon", s:magenta, "", "")
@@ -321,15 +319,12 @@ call <SID>X("uniteInputLine", s:base1, "", "") "input text
 call <SID>X("uniteInputCommand", s:green, "", "")
 
 
-
 "" Bibtex --------------------------------------------------
-"" :$VIMRUNTIME/syntax/bib.vim
 call <SID>X("bibType", s:violet, "", "")
 call <SID>X("bibEntryKw", s:blue, "", "")
 call <SID>X("bibKey", s:yellow, "", "")
 call <SID>X("bibVariable", s:blue, "", "")
 call <SID>X("bibNSEntryKw", s:blue, "", "")
-
 
 
 "" BufExplorer ---------------------------------------------
@@ -342,6 +337,14 @@ call <SID>X("bufExplorerModBuf", s:blue, "", "")
 call <SID>X("bufExplorerUnlBuf", s:base00, "", "")
 call <SID>X("bufExplorerInactBuf", s:base00, "", "")
 
+
+"" Git commit ----------------------------------------------
+call <SID>X("gitcommitSummary", s:orange, "", "")
+call <SID>X("gitcommitOnBranch", s:base00, "", "")
+call <SID>X("gitcommitBranch", s:violet, "", "")
+call <SID>X("gitcommitType", s:blue, "", "")
+call <SID>X("gitcommitHeader", s:yellow, "", "")
+call <SID>X("gitcommitFile", s:blue, "", "")
 
 
 "" Git -----------------------------------------------------
@@ -362,19 +365,15 @@ call <SID>X("gitDateHeader", s:blue, "", "")
 call <SID>X("gitHash", s:cyan, "", "")
 
 
-
 "" Make ----------------------------------------------------
-"" :$VIMRUNTIME/syntax/make.vim
 call <SID>X("makeTarget", s:orange, "", "")
 call <SID>X("makeInclude", s:blue, "", "")
-
 
 
 "" Extra StatusLine colors ---------------------------------
 call <SID>X("StatusLineBold", s:base1, s:base02, "bold")
 call <SID>X("StatusLineRed", s:red, s:base02, "")
 call <SID>X("StatusLineOrange", s:orange, s:base02, "")
-
 
 
 "" vim -----------------------------------------------------
@@ -385,4 +384,3 @@ call <SID>X("vimCommand", s:blue, "", "none")
 call <SID>X("texCite", s:cyan, "", "none")
 call <SID>X("texRefZone", s:violet, "", "none")
 
- 
