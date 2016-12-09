@@ -384,3 +384,10 @@ call <SID>X("vimCommand", s:blue, "", "none")
 call <SID>X("texCite", s:cyan, "", "none")
 call <SID>X("texRefZone", s:violet, "", "none")
 
+
+"" ctrlp ---------------------------------------------------
+call <SID>X("CtrlPNoEntries", s:red, "", "")
+call <SID>X("CtrlPMatch", s:yellow, "", "")
+call <SID>X("CtrlPMode1", s:green, s:base02, "")
+call <SID>X("CtrlPMode2", s:base00, s:base02, "")
+
