@@ -190,7 +190,7 @@ if version >= 700
     call <SID>X("PMenu", s:base0, s:base02, "none")
     call <SID>X("PMenuSel", s:base02, s:blue, "")
     call <SID>X("PMenuThumb", s:base00, s:base01, "")
-    call <SID>X("SignColumn", s:base01, s:base03, "")
+    call <SID>X("SignColumn", s:base01, s:base02, "")
 endif
 if version >= 703
     call <SID>X("ColorColumn", "", s:base02, "none")
