@@ -123,6 +123,25 @@ if &background=="light"
     let s:Tbase3  = s:TSbase03
 endif
 
+if has('nvim')
+    let g:terminal_color_0  = '#'.s:Gbase02
+    let g:terminal_color_1  = '#'.s:Gred
+    let g:terminal_color_2  = '#'.s:Ggreen
+    let g:terminal_color_3  = '#'.s:Gyellow
+    let g:terminal_color_4  = '#'.s:Gblue
+    let g:terminal_color_5  = '#'.s:Gviolet
+    let g:terminal_color_6  = '#'.s:Gcyan
+    let g:terminal_color_7  = '#'.s:Gbase2
+    let g:terminal_color_8  = '#'.s:Gbase03
+    let g:terminal_color_9  = '#'.s:Gorange
+    let g:terminal_color_10 = '#'.s:Gbase01
+    let g:terminal_color_11 = '#'.s:Gbase00
+    let g:terminal_color_12 = '#'.s:Gbase0
+    let g:terminal_color_13 = '#'.s:Gmagenta
+    let g:terminal_color_14 = '#'.s:Gbase1
+    let g:terminal_color_15 = '#'.s:Gbase3
+endif
+
 
 "" Functions -----------------------------------------------
 function! s:bluedrake_color(color)
@@ -166,7 +185,7 @@ endfunction
 
 function! <SID>X(group, fg, bg, attr)
     if a:fg != ""
-        exec "hi " . a:group .  " ctermfg=" . s:bluedrake_color(a:fg)[0]
+        exec "hi " . a:group . " ctermfg=" . s:bluedrake_color(a:fg)[0]
         exec "hi " . a:group . " guifg=#" . s:bluedrake_color(a:fg)[1]
     endif
     if a:bg != ""
