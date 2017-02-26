@@ -299,7 +299,7 @@ if version >= 703
     call <SID>X("Conceal", "blue", "base03", "")
     call <SID>X("ColorColumn", "", "base02", "none")
 endif
-    
+
 if version >= 704
     call <SID>X("CursorLineNr", "base1", "base02", "none")
 endif
@@ -446,4 +446,6 @@ call <SID>X("CtrlPMode2", "base00", "base02", "")
 call <SID>X("yamlDocumentStart", "base00", "", "")
 call <SID>X("yamlKeyValueDelimiter", "base00", "", "")
 
+"" vim-better-whitespace
+call <SID>X("ExtraWhitespace", "", "red", "")
 
