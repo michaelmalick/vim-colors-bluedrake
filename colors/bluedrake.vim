@@ -423,3 +423,8 @@ call <SID>X("CtrlPMatch", "yellow", "", "")
 call <SID>X("CtrlPMode1", "green", "base02", "")
 call <SID>X("CtrlPMode2", "base00", "base02", "")
 
+"" YAML ----------------------------------------------------
+call <SID>X("yamlDocumentStart", "base00", "", "")
+call <SID>X("yamlKeyValueDelimiter", "base00", "", "")
+
+
