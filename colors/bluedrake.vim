@@ -446,6 +446,14 @@ call <SID>X("CtrlPMode2", "base00", "base02", "")
 call <SID>X("yamlDocumentStart", "base00", "", "")
 call <SID>X("yamlKeyValueDelimiter", "base00", "", "")
 
-"" vim-better-whitespace
+
+"" vim-better-whitespace -----------------------------------
 call <SID>X("ExtraWhitespace", "", "red", "")
+
+
+"" gitgutter  ----------------------------------------------
+call <SID>X("GitGutterAdd", "green", "base02", "")
+call <SID>X("GitGutterChange", "blue", "base02", "")
+call <SID>X("GitGutterDelete", "red", "base02", "")
+call <SID>X("GitGutterChangeDelete", "yellow", "base02", "")
 
