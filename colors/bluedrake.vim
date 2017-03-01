@@ -14,7 +14,9 @@ if exists("syntax_on")
 endif
 
 let g:colors_name = "bluedrake"
-" let g:bluedrake_256 = 1
+if !exists("g:bluedrake_256")
+    let g:bluedrake_256 = 0
+endif
 
 
 
@@ -61,7 +63,7 @@ endif
 
 
 " Terminal colors ------------------------------------------
-if !exists("g:bluedrake_256")
+if g:bluedrake_256 == 0
     let s:TSbase03   = "8"
     let s:TSbase02   = "0"
     let s:TSbase01   = "10"
@@ -81,7 +83,7 @@ if !exists("g:bluedrake_256")
     let s:Tgreen    = "2"
 endif
 
-if exists("g:bluedrake_256")
+if g:bluedrake_256 == 1
     let s:TSbase03   = "235"
     let s:TSbase02   = "236"
     let s:TSbase01   = "24"
