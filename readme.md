@@ -12,13 +12,13 @@ have the same chroma and luminance but different hues). This means that
 different syntax groups are distinguished based on the location of the color on
 the color wheel rather than how bright the color is.
 
-The basic design and structure underlying bluedrake is similar to the incredibly
-well designed [solarized](http://ethanschoonover.com/solarized) color palette by
-Ethan Schoonover. The main design difference is that in bluedrake the main
-content is colored using the blue accent color, whereas in solarized it is
-colored using a base color. In general, the base colors are not used for content
-in the bluedrake color scheme, resulting in all content being highlighted by
-colors that are the same hue.
+The basic design and structure underlying bluedrake is similar to the
+[solarized](http://ethanschoonover.com/solarized) color palette by Ethan
+Schoonover. The main design difference is that in bluedrake the main content is
+colored using the blue accent color, whereas in solarized it is colored using a
+base color. In general, the base colors are not used for content in the
+bluedrake color scheme, resulting in all content being highlighted by colors
+that are the same hue.
 
 ![Color Palette](/screenshots/palette.jpg)
 ![Light Theme](/screenshots/screen.jpg)
@@ -55,10 +55,10 @@ or the following lines for the light theme:
 
 If you are using vim in a terminal, I highly recommend changing the default
 terminal colors to the specs listed in the Colors sections. Light and dark
-themes are available for OSX terminal.app in the `terminal` directory. Bluedrake
-defaults to using the terminal specified colors, if you are in a terminal that
-does not allow setting the colors, put `let g:bluedrake_256=1` in your `.vimrc`
-before the `colorscheme bluedrake` line.
+themes are available for macOS terminal.app in the `terminal` directory.
+Bluedrake defaults to using the terminal specified colors, if you are in a
+terminal that does not allow setting the colors, put `let g:bluedrake_256=1` in
+your `.vimrc` before the `colorscheme bluedrake` line.
 
 
 # Options
@@ -117,4 +117,4 @@ Table Notes:
 
 # License
 The bluedrake color palette is [MIT/X11](http://opensource.org/licenses/MIT)
-licensed. Copyright (c) 2014 Michael Malick
+licensed.
