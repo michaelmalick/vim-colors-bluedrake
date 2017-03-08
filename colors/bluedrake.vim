@@ -278,6 +278,10 @@ call <SID>X("VisualNOS", "base03", "base0", "")
 call <SID>X("WarningMsg", "red", "", "")
 call <SID>X("WildMenu", "blue", "base02", "reverse")
 
+if has('nvim')
+    call <SID>X("Substitute", "magenta", "base02", "")
+endif
+
 if version >= 701
     call <SID>X("CursorColumn", "", "base01", "none")
     call <SID>X("CursorLine", "", "base02", "none")
