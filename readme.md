@@ -116,5 +116,4 @@ Table Notes:
 
 
 # License
-The bluedrake color palette is [MIT/X11](http://opensource.org/licenses/MIT)
-licensed.
+MIT
