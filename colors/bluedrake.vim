@@ -280,6 +280,7 @@ call <SID>X("WildMenu", "blue", "base02", "reverse")
 
 if has('nvim')
     call <SID>X("Substitute", "magenta", "base02", "")
+    call <SID>X("QuickFixLine", "magenta", "", "")
 endif
 
 if version >= 701
