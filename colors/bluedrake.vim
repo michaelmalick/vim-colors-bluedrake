@@ -464,3 +464,7 @@ call <SID>X("GitGutterChange", "blue", "base02", "")
 call <SID>X("GitGutterDelete", "red", "base02", "")
 call <SID>X("GitGutterChangeDelete", "violet", "base02", "")
 
+
+"" R -------------------------------------------------------
+call <SID>X("rDollar", "base00", "", "")
+
