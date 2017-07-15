@@ -455,7 +455,7 @@ call <SID>X("yamlKeyValueDelimiter", "base00", "", "")
 
 
 "" vim-better-whitespace -----------------------------------
-call <SID>X("ExtraWhitespace", "", "red", "")
+call <SID>X("ExtraWhitespace", "", "base00", "")
 
 
 "" gitgutter  ----------------------------------------------
