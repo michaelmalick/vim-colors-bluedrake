@@ -311,8 +311,8 @@ if version >= 704
     call <SID>X("CursorLineNr", "base1", "base02", "none")
 endif
 
-if version >= 800
-    call <SID>X("EndOfBuffer", "base00", "base03", "none")
+if version >= 800 || has('nvim')
+    call <SID>X("EndOfBuffer", "base01", "base03", "none")
 endif
 
 
