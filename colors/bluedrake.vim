@@ -184,287 +184,288 @@ function! s:bluedrake_color(color)
     return s:col
 endfunction
 
+function! <SID>Hi_all(group, fg, bg, attr)
+    call <SID>Hi_gui(a:group, a:fg, a:bg, a:attr)
+    call <SID>Hi_cterm(a:group, a:fg, a:bg, a:attr)
+endfunction
 
-function! <SID>X(group, fg, bg, attr)
+function! <SID>Hi_cterm(group, fg, bg, attr)
     if a:fg != ""
         exec "hi " . a:group . " ctermfg=" . s:bluedrake_color(a:fg)[0]
-        exec "hi " . a:group . " guifg=#" . s:bluedrake_color(a:fg)[1]
     endif
     if a:bg != ""
         exec "hi " . a:group . " ctermbg=" . s:bluedrake_color(a:bg)[0]
-        exec "hi " . a:group . " guibg=#" . s:bluedrake_color(a:bg)[1]
     endif
     if a:attr != ""
         exec "hi " . a:group . " cterm=" . a:attr
+    endif
+endfunction
+
+function! <SID>Hi_gui(group, fg, bg, attr)
+    if a:fg != ""
+        exec "hi " . a:group . " guifg=#" . s:bluedrake_color(a:fg)[1]
+    endif
+    if a:bg != ""
+        exec "hi " . a:group . " guibg=#" . s:bluedrake_color(a:bg)[1]
+    endif
+    if a:attr != ""
         exec "hi " . a:group . " gui=" . a:attr
     endif
 endfunction
 
 
-
 "" Standard highlighting -----------------------------------
 
 " *Comment
-if has("gui_running")
-    call <SID>X("Comment", "base00", "", "italic")
-else
-    call <SID>X("Comment", "base00", "", "")
-endif
+call <SID>Hi_gui("Comment", "base00", "", "italic")
+call <SID>Hi_cterm("Comment", "base00", "", "")
 
 " *Constant (String, Character, Number, Boolean, Float)
-call <SID>X("Constant", "cyan", "", "none")
-if has("gui_running")
-    call <SID>X("String", "cyan", "", "italic")
-else
-    call <SID>X("String", "cyan", "", "")
-endif
+call <SID>Hi_all("Constant", "cyan", "", "none")
+call <SID>Hi_gui("String", "cyan", "", "italic")
+call <SID>Hi_cterm("String", "cyan", "", "")
 
 " *Identifier (Function)
-call <SID>X("Identifier", "violet", "", "none")
+call <SID>Hi_all("Identifier", "violet", "", "none")
 
 " *Statement (Conditional, Repeat, Label, Operator, Keyword, Exception)
-call <SID>X("Statement", "yellow", "", "none")
+call <SID>Hi_all("Statement", "yellow", "", "none")
 
 " *PreProc (Include, Define, Macro, PreCondit)
-call <SID>X("PreProc", "orange", "", "none")
+call <SID>Hi_all("PreProc", "orange", "", "none")
 
 " *Type (StorageClass Structure, Typedef)
-call <SID>X("Type", "green", "", "none")
+call <SID>Hi_all("Type", "green", "", "none")
 
 " *Special (SpecialChar, Tag, Delimiter, SpecialComment, Debug)
-call <SID>X("Special", "magenta", "", "none")
-call <SID>X("Delimiter", "base00", "", "none")
+call <SID>Hi_all("Special", "magenta", "", "none")
+call <SID>Hi_all("Delimiter", "base00", "", "none")
 
 " *Underline
-call <SID>X("Underlined", "blue", "", "underline")
+call <SID>Hi_all("Underlined", "blue", "", "underline")
 
 " *Ignore
-call <SID>X("Ignore", "blue", "", "none")
+call <SID>Hi_all("Ignore", "blue", "", "none")
 
 " *Error
-call <SID>X("Error", "base03", "red", "bold")
+call <SID>Hi_all("Error", "base03", "red", "bold")
 
 " *Todo
-call <SID>X("Todo", "base0", "base03", "bold")
+call <SID>Hi_all("Todo", "base0", "base03", "bold")
 
 
 "" Default highlighting ------------------------------------
-call <SID>X("Cursor", "base03", "base0", "")
-call <SID>X("CursorIM", "base03", "base0", "")
-call <SID>X("Directory", "violet", "", "")
-call <SID>X("DiffAdd", "green", "base02", "reverse")
-call <SID>X("DiffChange", "blue", "base02", "reverse")
-call <SID>X("DiffDelete", "red", "base02", "reverse")
-call <SID>X("DiffText", "orange", "base03", "reverse")
-call <SID>X("ErrorMsg", "base03", "red", "bold")
-call <SID>X("VertSplit", "base01", "base03", "none")
-call <SID>X("Folded", "base0", "base03", "")
-call <SID>X("FoldColumn", "base00", "base02", "")
-call <SID>X("SignColumn", "base00", "base02", "")
-call <SID>X("IncSearch", "yellow", "base03", "")
-call <SID>X("LineNr", "base00", "base02", "")
-call <SID>X("ModeMsg", "green", "", "")
-call <SID>X("MoreMsg", "green", "", "")
-call <SID>X("NonText", "base0", "", "none")
-call <SID>X("Normal", "blue", "base03", "")
-call <SID>X("Question", "green", "", "")
-call <SID>X("Search", "base03", "yellow", "")
-call <SID>X("SpecialKey", "base0", "", "")
-call <SID>X("StatusLine", "base02", "base1", "reverse")
-call <SID>X("StatusLineNC", "base02", "base01", "reverse")
-call <SID>X("Title", "orange", "", "none")
-call <SID>X("Visual", "base03", "base0", "")
-call <SID>X("VisualNOS", "base03", "base0", "")
-call <SID>X("WarningMsg", "red", "", "")
-call <SID>X("WildMenu", "blue", "base02", "reverse")
+call <SID>Hi_all("Cursor", "base03", "base0", "")
+call <SID>Hi_all("CursorIM", "base03", "base0", "")
+call <SID>Hi_all("Directory", "violet", "", "")
+call <SID>Hi_all("DiffAdd", "green", "base02", "reverse")
+call <SID>Hi_all("DiffChange", "blue", "base02", "reverse")
+call <SID>Hi_all("DiffDelete", "red", "base02", "reverse")
+call <SID>Hi_all("DiffText", "orange", "base03", "reverse")
+call <SID>Hi_all("ErrorMsg", "base03", "red", "bold")
+call <SID>Hi_all("VertSplit", "base01", "base03", "none")
+call <SID>Hi_all("Folded", "base0", "base03", "")
+call <SID>Hi_all("FoldColumn", "base00", "base02", "")
+call <SID>Hi_all("SignColumn", "base00", "base02", "")
+call <SID>Hi_all("IncSearch", "yellow", "base03", "")
+call <SID>Hi_all("LineNr", "base00", "base02", "")
+call <SID>Hi_all("ModeMsg", "green", "", "")
+call <SID>Hi_all("MoreMsg", "green", "", "")
+call <SID>Hi_all("NonText", "base0", "", "none")
+call <SID>Hi_all("Normal", "blue", "base03", "")
+call <SID>Hi_all("Question", "green", "", "")
+call <SID>Hi_all("Search", "base03", "yellow", "")
+call <SID>Hi_all("SpecialKey", "base0", "", "")
+call <SID>Hi_all("StatusLine", "base02", "base1", "reverse")
+call <SID>Hi_all("StatusLineNC", "base02", "base01", "reverse")
+call <SID>Hi_all("Title", "orange", "", "none")
+call <SID>Hi_all("Visual", "base03", "base0", "")
+call <SID>Hi_all("VisualNOS", "base03", "base0", "")
+call <SID>Hi_all("WarningMsg", "red", "", "")
+call <SID>Hi_all("WildMenu", "blue", "base02", "reverse")
 
 if has('nvim')
-    call <SID>X("Substitute", "magenta", "base02", "")
-    call <SID>X("QuickFixLine", "magenta", "", "")
+    call <SID>Hi_all("Substitute", "magenta", "base02", "")
+    call <SID>Hi_all("QuickFixLine", "magenta", "", "")
 endif
 
 if version >= 701
-    call <SID>X("CursorColumn", "", "base01", "none")
-    call <SID>X("CursorLine", "", "base02", "none")
-    call <SID>X("MatchParen", "magenta", "base01", "bold")
-    call <SID>X("PMenu", "base0", "base02", "none")
-    call <SID>X("PMenuSel", "base02", "blue", "")
-    call <SID>X("PMenuSbar", "base00", "base01", "")
-    call <SID>X("PMenuThumb", "base00", "base01", "")
-    call <SID>X("TabLine", "base00", "base02", "none")
-    call <SID>X("TabLineFill", "base02", "blue", "reverse")
-    call <SID>X("TabLineSel", "base1", "base03", "")
-    if !has("gui_running")
-        call <SID>X("SpellBad", "red", "base03", "underline")
-        call <SID>X("SpellCap", "magenta", "base03", "underline")
-        call <SID>X("SpellLocal", "cyan", "base03", "underline")
-        call <SID>X("SpellRare", "cyan", "base03", "underline")
-    endif
+    call <SID>Hi_all("CursorColumn", "", "base01", "none")
+    call <SID>Hi_all("CursorLine", "", "base02", "none")
+    call <SID>Hi_all("MatchParen", "magenta", "base01", "bold")
+    call <SID>Hi_all("PMenu", "base0", "base02", "none")
+    call <SID>Hi_all("PMenuSel", "base02", "blue", "")
+    call <SID>Hi_all("PMenuSbar", "base00", "base01", "")
+    call <SID>Hi_all("PMenuThumb", "base00", "base01", "")
+    call <SID>Hi_all("TabLine", "base00", "base02", "none")
+    call <SID>Hi_all("TabLineFill", "base02", "blue", "reverse")
+    call <SID>Hi_all("TabLineSel", "base1", "base03", "")
+    call <SID>Hi_cterm("SpellBad", "red", "base03", "underline")
+    call <SID>Hi_cterm("SpellCap", "magenta", "base03", "underline")
+    call <SID>Hi_cterm("SpellLocal", "cyan", "base03", "underline")
+    call <SID>Hi_cterm("SpellRare", "cyan", "base03", "underline")
 endif
 
 if version >= 703
-    call <SID>X("Conceal", "blue", "base03", "")
-    call <SID>X("ColorColumn", "", "base02", "none")
+    call <SID>Hi_all("Conceal", "blue", "base03", "")
+    call <SID>Hi_all("ColorColumn", "", "base02", "none")
 endif
 
 if version >= 704
-    call <SID>X("CursorLineNr", "base1", "base02", "none")
+    call <SID>Hi_all("CursorLineNr", "base1", "base02", "none")
 endif
 
 if version >= 800 || has('nvim')
-    call <SID>X("EndOfBuffer", "base01", "base03", "none")
+    call <SID>Hi_all("EndOfBuffer", "base01", "base03", "none")
 endif
 
 
 "" HTML ----------------------------------------------------
-call <SID>X("htmlH1", "orange", "", "bold")
-call <SID>X("htmlH2", "violet", "", "bold")
-call <SID>X("htmlH3", "green", "", "bold")
-call <SID>X("htmlH4", "magenta", "", "bold")
-call <SID>X("htmlH5", "cyan", "", "bold")
-call <SID>X("htmlH6", "yellow", "", "bold")
-if has("gui_running")
-    call <SID>X("htmlItalic", "", "", "italic")
-else
-    call <SID>X("htmlItalic", "", "", "underline")
-endif
+call <SID>Hi_all("htmlH1", "orange", "", "bold")
+call <SID>Hi_all("htmlH2", "violet", "", "bold")
+call <SID>Hi_all("htmlH3", "green", "", "bold")
+call <SID>Hi_all("htmlH4", "magenta", "", "bold")
+call <SID>Hi_all("htmlH5", "cyan", "", "bold")
+call <SID>Hi_all("htmlH6", "yellow", "", "bold")
+call <SID>Hi_gui("htmlItalic", "", "", "italic")
+call <SID>Hi_cterm("htmlItalic", "", "", "underline")
 
 
 "" Markdown (tpope) ----------------------------------------
-call <SID>X("markdownHeadingDelimiter", "base00", "", "none")
-call <SID>X("markdownOrderedListMarker", "base0", "", "none")
-call <SID>X("markdownListMarker", "base0", "", "none")
-call <SID>X("markdownRule", "base00", "", "none")
-call <SID>X("markdownUrl", "yellow", "", "underline")
-call <SID>X("markdownCode", "cyan", "", "none")
+call <SID>Hi_all("markdownHeadingDelimiter", "base00", "", "none")
+call <SID>Hi_all("markdownOrderedListMarker", "base0", "", "none")
+call <SID>Hi_all("markdownListMarker", "base0", "", "none")
+call <SID>Hi_all("markdownRule", "base00", "", "none")
+call <SID>Hi_all("markdownUrl", "yellow", "", "underline")
+call <SID>Hi_all("markdownCode", "cyan", "", "none")
 
 
 "" Pandoc --------------------------------------------------
-call <SID>X("pandocYAMLHeader", "orange", "", "")
-call <SID>X("pandocAtxHeader", "orange", "", "")
-call <SID>X("pandocSetexHeader", "orange", "", "")
-call <SID>X("pandocAtxStart", "orange", "", "")
-call <SID>X("pandocListItemBullet", "base0", "", "")
-call <SID>X("pandocUListItemBullet", "base0", "", "")
-call <SID>X("pandocListItemBulletId", "base0", "", "")
-call <SID>X("pandocPCite", "cyan", "", "")
-call <SID>X("pandocICite", "cyan", "", "")
-call <SID>X("pandocCiteAnchor", "cyan", "", "")
-call <SID>X("pandocCiteKey", "cyan", "", "")
-call <SID>X("pandocCiteLocator", "violet", "", "")
-call <SID>X("pandocDelimitedCodeBlockLanguage", "base0", "", "")
-call <SID>X("pandocDelimitedCodeBlockStart", "base0", "", "")
-call <SID>X("pandocDelimitedCodeBlockEnd", "base0", "", "")
-call <SID>X("pandocReferenceLabel", "violet", "", "") " wrapped citations
-call <SID>X("pandocReferenceURL", "red", "", "")
+call <SID>Hi_all("pandocYAMLHeader", "orange", "", "")
+call <SID>Hi_all("pandocAtxHeader", "orange", "", "")
+call <SID>Hi_all("pandocSetexHeader", "orange", "", "")
+call <SID>Hi_all("pandocAtxStart", "orange", "", "")
+call <SID>Hi_all("pandocListItemBullet", "base0", "", "")
+call <SID>Hi_all("pandocUListItemBullet", "base0", "", "")
+call <SID>Hi_all("pandocListItemBulletId", "base0", "", "")
+call <SID>Hi_all("pandocPCite", "cyan", "", "")
+call <SID>Hi_all("pandocICite", "cyan", "", "")
+call <SID>Hi_all("pandocCiteAnchor", "cyan", "", "")
+call <SID>Hi_all("pandocCiteKey", "cyan", "", "")
+call <SID>Hi_all("pandocCiteLocator", "violet", "", "")
+call <SID>Hi_all("pandocDelimitedCodeBlockLanguage", "base0", "", "")
+call <SID>Hi_all("pandocDelimitedCodeBlockStart", "base0", "", "")
+call <SID>Hi_all("pandocDelimitedCodeBlockEnd", "base0", "", "")
+call <SID>Hi_all("pandocReferenceLabel", "violet", "", "") " wrapped citations
+call <SID>Hi_all("pandocReferenceURL", "red", "", "")
 
 
 "" Unite ---------------------------------------------------
-call <SID>X("uniteMarkedLine", "magenta", "", "bold")
-call <SID>X("uniteMarkedIcon", "magenta", "", "")
-call <SID>X("uniteCandidateSourceName", "red", "", "")
-call <SID>X("uniteQuickMatchText", "red", "", "")
-call <SID>X("uniteCandidateIcon", "red", "", "")
-call <SID>X("uniteCandidateInputKeyword", "yellow", "", "") " matched text
-call <SID>X("uniteStatusNormal", "base0", "base02", "")
-call <SID>X("uniteStatusHead", "base0", "base02", "")
-call <SID>X("uniteStatusSourceNames", "base00", "base02", "")
-call <SID>X("uniteStatusSourceCandidates", "base1", "base02", "")
-call <SID>X("uniteStatusMessage", "violet", "base02", "")
-call <SID>X("uniteStatusLineNR", "base0", "base02", "")
-call <SID>X("uniteInputPrompt", "red", "", "")
-call <SID>X("uniteInputLine", "base1", "", "") "input text
-call <SID>X("uniteInputCommand", "green", "", "")
+call <SID>Hi_all("uniteMarkedLine", "magenta", "", "bold")
+call <SID>Hi_all("uniteMarkedIcon", "magenta", "", "")
+call <SID>Hi_all("uniteCandidateSourceName", "red", "", "")
+call <SID>Hi_all("uniteQuickMatchText", "red", "", "")
+call <SID>Hi_all("uniteCandidateIcon", "red", "", "")
+call <SID>Hi_all("uniteCandidateInputKeyword", "yellow", "", "") " matched text
+call <SID>Hi_all("uniteStatusNormal", "base0", "base02", "")
+call <SID>Hi_all("uniteStatusHead", "base0", "base02", "")
+call <SID>Hi_all("uniteStatusSourceNames", "base00", "base02", "")
+call <SID>Hi_all("uniteStatusSourceCandidates", "base1", "base02", "")
+call <SID>Hi_all("uniteStatusMessage", "violet", "base02", "")
+call <SID>Hi_all("uniteStatusLineNR", "base0", "base02", "")
+call <SID>Hi_all("uniteInputPrompt", "red", "", "")
+call <SID>Hi_all("uniteInputLine", "base1", "", "") "input text
+call <SID>Hi_all("uniteInputCommand", "green", "", "")
 
 
 "" Bibtex --------------------------------------------------
-call <SID>X("bibType", "violet", "", "")
-call <SID>X("bibEntryKw", "blue", "", "")
-call <SID>X("bibKey", "yellow", "", "")
-call <SID>X("bibVariable", "blue", "", "")
-call <SID>X("bibNSEntryKw", "blue", "", "")
+call <SID>Hi_all("bibType", "violet", "", "")
+call <SID>Hi_all("bibEntryKw", "blue", "", "")
+call <SID>Hi_all("bibKey", "yellow", "", "")
+call <SID>Hi_all("bibVariable", "blue", "", "")
+call <SID>Hi_all("bibNSEntryKw", "blue", "", "")
 
 
 "" BufExplorer ---------------------------------------------
-call <SID>X("bufExplorerActBuf", "blue", "", "")
-call <SID>X("bufExplorerAltBuf", "blue", "", "")
-call <SID>X("bufExplorerCurBuf", "yellow", "", "")
-call <SID>X("bufExplorerHidBuf", "blue", "", "")
-call <SID>X("bufExplorerLockedBuf", "blue", "", "")
-call <SID>X("bufExplorerModBuf", "blue", "", "")
-call <SID>X("bufExplorerUnlBuf", "base00", "", "")
-call <SID>X("bufExplorerInactBuf", "base00", "", "")
+call <SID>Hi_all("bufExplorerActBuf", "blue", "", "")
+call <SID>Hi_all("bufExplorerAltBuf", "blue", "", "")
+call <SID>Hi_all("bufExplorerCurBuf", "yellow", "", "")
+call <SID>Hi_all("bufExplorerHidBuf", "blue", "", "")
+call <SID>Hi_all("bufExplorerLockedBuf", "blue", "", "")
+call <SID>Hi_all("bufExplorerModBuf", "blue", "", "")
+call <SID>Hi_all("bufExplorerUnlBuf", "base00", "", "")
+call <SID>Hi_all("bufExplorerInactBuf", "base00", "", "")
 
 
 "" Git commit ----------------------------------------------
-call <SID>X("gitcommitSummary", "orange", "", "")
-call <SID>X("gitcommitOnBranch", "base00", "", "")
-call <SID>X("gitcommitBranch", "violet", "", "")
-call <SID>X("gitcommitType", "blue", "", "")
-call <SID>X("gitcommitHeader", "yellow", "", "")
-call <SID>X("gitcommitFile", "blue", "", "")
+call <SID>Hi_all("gitcommitSummary", "orange", "", "")
+call <SID>Hi_all("gitcommitOnBranch", "base00", "", "")
+call <SID>Hi_all("gitcommitBranch", "violet", "", "")
+call <SID>Hi_all("gitcommitType", "blue", "", "")
+call <SID>Hi_all("gitcommitHeader", "yellow", "", "")
+call <SID>Hi_all("gitcommitFile", "blue", "", "")
 
 
 "" Git -----------------------------------------------------
-call <SID>X("diffAdded", "green", "base02", "")
-call <SID>X("diffRemoved", "red", "base02", "none")
-call <SID>X("diffChanged", "blue", "base02", "none")
-call <SID>X("diffLine", "violet", "", "bold")
-call <SID>X("diffFile", "magenta", "", "bold")
-call <SID>X("diffNewFile", "blue", "", "")
-call <SID>X("diffOldFile", "blue", "", "")
-call <SID>X("diffIndexLine", "blue", "", "")
-call <SID>X("diffSubName", "blue", "", "")
-call <SID>X("gitIdentity", "blue", "", "")
-call <SID>X("gitEmail", "blue", "", "")
-call <SID>X("gitEmailDelimiter", "base00", "", "")
-call <SID>X("gitDate", "blue", "", "")
-call <SID>X("gitDateHeader", "blue", "", "")
-call <SID>X("gitHash", "cyan", "", "")
+call <SID>Hi_all("diffAdded", "green", "base02", "")
+call <SID>Hi_all("diffRemoved", "red", "base02", "none")
+call <SID>Hi_all("diffChanged", "blue", "base02", "none")
+call <SID>Hi_all("diffLine", "violet", "", "bold")
+call <SID>Hi_all("diffFile", "magenta", "", "bold")
+call <SID>Hi_all("diffNewFile", "blue", "", "")
+call <SID>Hi_all("diffOldFile", "blue", "", "")
+call <SID>Hi_all("diffIndexLine", "blue", "", "")
+call <SID>Hi_all("diffSubName", "blue", "", "")
+call <SID>Hi_all("gitIdentity", "blue", "", "")
+call <SID>Hi_all("gitEmail", "blue", "", "")
+call <SID>Hi_all("gitEmailDelimiter", "base00", "", "")
+call <SID>Hi_all("gitDate", "blue", "", "")
+call <SID>Hi_all("gitDateHeader", "blue", "", "")
+call <SID>Hi_all("gitHash", "cyan", "", "")
 
 
 "" Make ----------------------------------------------------
-call <SID>X("makeTarget", "orange", "", "")
-call <SID>X("makeInclude", "blue", "", "")
+call <SID>Hi_all("makeTarget", "orange", "", "")
+call <SID>Hi_all("makeInclude", "blue", "", "")
 
 
 "" Extra StatusLine colors ---------------------------------
-call <SID>X("StatusLineBold", "base1", "base02", "bold")
-call <SID>X("StatusLineRed", "red", "base02", "")
-call <SID>X("StatusLineOrange", "orange", "base02", "")
+call <SID>Hi_all("StatusLineBold", "base1", "base02", "bold")
+call <SID>Hi_all("StatusLineRed", "red", "base02", "")
+call <SID>Hi_all("StatusLineOrange", "orange", "base02", "")
 
 
 "" vim -----------------------------------------------------
-call <SID>X("vimCommand", "blue", "", "none")
+call <SID>Hi_all("vimCommand", "blue", "", "none")
 
 
 "" tex -----------------------------------------------------
-call <SID>X("texCite", "cyan", "", "none")
-call <SID>X("texRefZone", "violet", "", "none")
+call <SID>Hi_all("texCite", "cyan", "", "none")
+call <SID>Hi_all("texRefZone", "violet", "", "none")
 
 
 "" ctrlp ---------------------------------------------------
-call <SID>X("CtrlPNoEntries", "red", "", "")
-call <SID>X("CtrlPMatch", "yellow", "", "")
-call <SID>X("CtrlPMode1", "green", "base02", "")
-call <SID>X("CtrlPMode2", "base00", "base02", "")
+call <SID>Hi_all("CtrlPNoEntries", "red", "", "")
+call <SID>Hi_all("CtrlPMatch", "yellow", "", "")
+call <SID>Hi_all("CtrlPMode1", "green", "base02", "")
+call <SID>Hi_all("CtrlPMode2", "base00", "base02", "")
 
 "" YAML ----------------------------------------------------
-call <SID>X("yamlDocumentStart", "base00", "", "")
-call <SID>X("yamlKeyValueDelimiter", "base00", "", "")
+call <SID>Hi_all("yamlDocumentStart", "base00", "", "")
+call <SID>Hi_all("yamlKeyValueDelimiter", "base00", "", "")
 
 
 "" vim-better-whitespace -----------------------------------
-call <SID>X("ExtraWhitespace", "", "base00", "")
+call <SID>Hi_all("ExtraWhitespace", "", "base00", "")
 
 
 "" gitgutter  ----------------------------------------------
-call <SID>X("GitGutterAdd", "green", "base02", "")
-call <SID>X("GitGutterChange", "blue", "base02", "")
-call <SID>X("GitGutterDelete", "red", "base02", "")
-call <SID>X("GitGutterChangeDelete", "violet", "base02", "")
+call <SID>Hi_all("GitGutterAdd", "green", "base02", "")
+call <SID>Hi_all("GitGutterChange", "blue", "base02", "")
+call <SID>Hi_all("GitGutterDelete", "red", "base02", "")
+call <SID>Hi_all("GitGutterChangeDelete", "violet", "base02", "")
 
 
 "" R -------------------------------------------------------
-call <SID>X("rDollar", "base00", "", "")
+call <SID>Hi_all("rDollar", "base00", "", "")
 
