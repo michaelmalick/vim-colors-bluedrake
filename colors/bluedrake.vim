@@ -469,3 +469,7 @@ call <SID>Hi_all("GitGutterChangeDelete", "violet", "base02", "")
 "" R -------------------------------------------------------
 call <SID>Hi_all("rDollar", "base00", "", "")
 
+
+"" GV ------------------------------------------------------
+call <SID>Hi_all("gvAuthor", "base00", "", "")
+
