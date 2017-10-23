@@ -319,6 +319,9 @@ if version >= 800 || has('nvim')
     call <SID>Hi_all("EndOfBuffer", "base01", "base03", "none")
 endif
 
+if has('terminal')
+    call <SID>Hi_all("Terminal", "blue", "base03", "none")
+endif
 
 "" HTML ----------------------------------------------------
 call <SID>Hi_all("htmlH1", "orange", "", "bold")
