@@ -323,6 +323,11 @@ if has('terminal')
     call <SID>Hi_all("Terminal", "blue", "base03", "none")
 endif
 
+
+"" Quickfix ------------------------------------------------
+call <SID>Hi_all("qfLineNr", "base00", "", "none")
+
+
 "" HTML ----------------------------------------------------
 call <SID>Hi_all("htmlH1", "orange", "", "bold")
 call <SID>Hi_all("htmlH2", "violet", "", "bold")
