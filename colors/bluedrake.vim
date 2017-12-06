@@ -285,7 +285,7 @@ call <SID>Hi_all("WarningMsg", "red", "", "")
 call <SID>Hi_all("WildMenu", "blue", "base02", "reverse")
 
 if has('nvim')
-    call <SID>Hi_all("Substitute", "magenta", "base02", "")
+    call <SID>Hi_all("Substitute", "base2", "base01", "")
     call <SID>Hi_all("QuickFixLine", "magenta", "", "")
 endif
 
