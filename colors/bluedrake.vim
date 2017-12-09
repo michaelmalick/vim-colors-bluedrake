@@ -1,7 +1,7 @@
 "" bluedrake.vim
 ""
 "" Designer: Michael Malick
-"" Version:  0.10
+"" Version:  1.0
 ""
 "" For details of highlight groups see :h syntax
 "" To inspect filetype syntax files use :e $VIMRUNTIME/syntax/html.vim
