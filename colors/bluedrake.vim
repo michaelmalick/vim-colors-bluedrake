@@ -144,6 +144,25 @@ if has('nvim')
     let g:terminal_color_15 = '#'.s:Gbase3
 endif
 
+if has('terminal')
+    let g:terminal_ansi_colors = ['#'.s:Gbase02,
+                                \ '#'.s:Gred,
+                                \ '#'.s:Ggreen,
+                                \ '#'.s:Gyellow,
+                                \ '#'.s:Gblue,
+                                \ '#'.s:Gviolet,
+                                \ '#'.s:Gcyan,
+                                \ '#'.s:Gbase2,
+                                \ '#'.s:Gbase03,
+                                \ '#'.s:Gorange,
+                                \ '#'.s:Gbase01,
+                                \ '#'.s:Gbase00,
+                                \ '#'.s:Gbase0,
+                                \ '#'.s:Gmagenta,
+                                \ '#'.s:Gbase1,
+                                \ '#'.s:Gbase3]
+endif
+
 
 "" Functions -----------------------------------------------
 function! s:bluedrake_color(color)
@@ -454,7 +473,7 @@ call <SID>Hi_all("texRefZone", "violet", "", "none")
 
 "" ctrlp ---------------------------------------------------
 call <SID>Hi_all("CtrlPNoEntries", "red", "", "")
-call <SID>Hi_all("CtrlPMatch", "yellow", "", "")
+call <SID>Hi_all("CtrlPMatch", "base03", "yellow", "")
 call <SID>Hi_all("CtrlPMode1", "green", "base02", "")
 call <SID>Hi_all("CtrlPMode2", "base00", "base02", "")
 
