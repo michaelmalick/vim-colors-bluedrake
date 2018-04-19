@@ -340,6 +340,8 @@ endif
 
 if has('terminal')
     call <SID>Hi_all("Terminal", "blue", "base03", "none")
+    call <SID>Hi_all("StatusLineTerm", "base02", "base1", "reverse")
+    call <SID>Hi_all("StatusLineTermNC", "base02", "base01", "reverse")
 endif
 
 
